@@ -1,0 +1,64 @@
+@media (max-width: 768px) {
+    .PaddingBottomDesktopOnly {
+        padding-bottom: 0px;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1350px) {
+    .PrimaryHeadingFont {
+        font-weight: 500;
+        font-size: 2.3rem;
+        line-height: 43px;
+    }
+
+    .SecondaryHeadingFont {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 54px;
+    }
+
+    .PaddingTop15 {
+        padding-top: 15px !important;
+    }
+
+    .PaddingTop30 {
+        padding-top: 30px !important;
+    }
+
+    .PaddingTop50 {
+        padding-top: 50px !important;
+    }
+
+    .PaddingTop80 {
+        padding-top: 80px !important;
+    }
+
+    .PaddingTop100 {
+        padding-top: 100px !important;
+    }
+
+    .PaddingBottom15 {
+        padding-bottom: 15px !important;
+    }
+
+    .PaddingBottom30 {
+        padding-bottom: 30px !important;
+    }
+
+    .PaddingBottom50 {
+        padding-bottom: 50px !important;
+    }
+
+    .PaddingBottom80 {
+        padding-bottom: 80px !important;
+    }
+
+    .PaddingBottom100 {
+        padding-bottom: 100px !important;
+    }
+
+    .MaxWidthComponent {
+        max-width: 1100px !important;
+    }
+
+}

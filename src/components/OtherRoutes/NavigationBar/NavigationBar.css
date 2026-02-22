@@ -1,0 +1,275 @@
+#MainHeader {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#NavigationBar {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+#ActivitiesBar {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(235, 73, 58, 0.04);
+    border-bottom: 1px solid rgba(235, 73, 58, 0.08);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.25s linear;
+    transform-origin: top;
+    overflow: hidden;
+}
+
+#ActivitiesBar.hidden {
+    height: 0;
+    opacity: 0;
+    transform: translateY(-5px);
+    pointer-events: none;
+}
+
+#ActivitiesBar.visible {
+    height: 55px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.ActivitiesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.NavContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Navigation Sections */
+.NavLeft {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.NavSearch {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+/* Search Suggestions Dropdown */
+.NavSuggestionsDropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    z-index: 2000;
+    padding: 8px 0;
+}
+
+.NavSuggestionItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.NavSuggestionItem:hover {
+    background-color: #f7f7f7;
+}
+
+.NavSuggestionItem svg {
+    width: 16px;
+    height: 16px;
+    color: #999;
+}
+
+.NavSuggestionItem span {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 400;
+}
+
+.NavEmptySuggestions {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    color: #999;
+}
+
+.NavEmptySuggestions .EmptyIcon {
+    width: 60px;
+    height: 60px;
+    opacity: 0.5;
+}
+
+.NavEmptySuggestions span {
+    font-size: 0.85rem;
+}
+
+.NavRight {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+/* Activity Items */
+.NavActivityItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 6px 12px;
+    border-radius: 12px;
+}
+
+.NavActivityItem:hover {
+    /* background-color: #fcfcfc; */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.NavActivityItem:hover .ActivityLabel {
+    color: var(--brand-color);
+}
+
+.ActivityIconBox {
+    color: var(--brand-color);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ActivityIconBox svg {
+    width: 24px;
+    height: 24px;
+}
+
+.ActivityLabel {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.NavLogo {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* Search Box */
+.SearchBarWrapper {
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.SearchInput {
+    width: 100%;
+    padding: 9px 12px;
+    padding-right: 38px;
+    border-radius: 100px;
+    border: 1px solid #eaeaea;
+    font-size: 0.82rem;
+    color: #222;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f6f6f6;
+}
+
+.SearchInput:focus {
+    border-color: #ddd;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.SearchIconBox {
+    position: absolute;
+    right: 14px;
+    color: #999;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.SearchIconBox svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Right Actions */
+.CartButton {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.CartButton:hover {
+    background-color: #f5f5f5;
+    color: var(--brand-color);
+}
+
+.CartButton svg {
+    width: 22px;
+    height: 22px;
+}
+
+.LoginBtn {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.LoginBtn:hover {
+    background-color: var(--brand-color);
+    box-shadow: 0 5px 15px rgba(235, 73, 58, 0.2);
+}
+
+/* Dark mode overrides if needed, but sticky white was requested */

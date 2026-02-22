@@ -1,0 +1,45 @@
+#BestSellersDesktop {
+    width: 100%;
+    overflow: hidden;
+}
+
+#BestSellersDesktop .BestSellersHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#BestSellersDesktop .CustomNavigation {
+    display: flex;
+    gap: 12px;
+}
+
+#BestSellersDesktop .CustomNavigation button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: #000;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#BestSellersDesktop .CustomNavigation button:hover {
+    background: var(--brand-color);
+    transform: scale(1.05);
+}
+
+#BestSellersDesktop .CustomNavigation button svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Swiper overrides for this section if any */
+#BestSellersDesktop .BestSellersSwiper {
+    padding-bottom: 40px;
+}

@@ -1,0 +1,86 @@
+#DestinationLocation {
+    background-color: #fff;
+}
+
+.DestinationHeroContainer {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.HeroLeft {
+    flex: 1;
+}
+
+.HeroRight {
+    flex: 1;
+}
+
+/* Breadcrumbs */
+.Breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #666;
+}
+
+.Breadcrumb a {
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.Breadcrumb a:hover {
+    color: var(--brand-color);
+}
+
+.Breadcrumb svg {
+    width: 16px;
+    height: 16px;
+}
+
+.Breadcrumb .Separator {
+    color: #ccc;
+}
+
+.Breadcrumb .Current {
+    color: #000;
+    font-weight: 600;
+}
+
+
+/* Hero Image */
+.HeroImageWrapper {
+    position: relative;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.HeroImageWrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .DestinationHeroContainer {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .HeroTitle {
+        margin: 0 auto 24px;
+    }
+
+    .HeroSubtitle {
+        margin: 0 auto;
+    }
+
+    .Breadcrumb {
+        justify-content: center;
+    }
+}

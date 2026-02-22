@@ -1,0 +1,218 @@
+#MainFooter {
+    background-color: #0c0c0c;
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.FooterTopGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.FooterBrandCol {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.FooterLogo {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+}
+
+.FooterBrandDesc {
+    font-size: 0.92rem;
+    color: #a0a0a0;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.FooterBrandSlogan {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--brand-color);
+    font-weight: 500;
+}
+
+.FooterSocials {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.SocialIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.SocialIcon:hover {
+    background: var(--brand-color);
+    color: #ffffff;
+    transform: translateY(-5px);
+    border-color: var(--brand-color);
+    box-shadow: 0 5px 15px rgba(235, 73, 58, 0.3);
+}
+
+.SocialIcon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.FooterColHeading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.FooterColHeading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--brand-color);
+    border-radius: 2px;
+}
+
+.FooterLinkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.FooterLink {
+    text-decoration: none;
+    color: #a0a0a0;
+    font-size: 0.92rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.FooterLink:hover {
+    color: var(--brand-color);
+    transform: translateX(5px);
+}
+
+.FooterContactInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ContactItem {
+    font-size: 0.92rem;
+    color: #a0a0a0;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.ContactItem strong {
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+.FooterBottomBar {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FooterBottomLeft {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.CopyrightText {
+    font-size: 0.88rem;
+    color: #888;
+    margin: 0;
+}
+
+.BottomLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.BottomLink {
+    font-size: 0.88rem;
+    color: #1a1a1a;
+    /* Using black for links as per image */
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#MainFooter .BottomLink {
+    color: #ffffff;
+}
+
+.BottomLink:hover {
+    color: var(--brand-color);
+}
+
+.FooterBottomRight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.PaymentIcons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.PaymentIcon {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.PaymentIcon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.PaymentIcon svg {
+    height: 20px;
+    width: auto;
+    display: block;
+}
+
+#MainFooter .PaymentIcon {
+    background: #ffffff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #1a1a1a;
+    /* Ensure SVGs using currentColor are visible */
+}
+
+
+
+/* Response handling for responsiveness would go in mediaQueriesCss.css if needed */

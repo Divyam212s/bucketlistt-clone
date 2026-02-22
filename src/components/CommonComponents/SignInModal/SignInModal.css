@@ -1,0 +1,261 @@
+/* SignInModal – minimal, professional */
+
+/* Single close icon only – hide Ant Design default */
+.SignInModal .ant-modal-close {
+    display: none !important;
+}
+
+.SignInModal .ant-modal-content {
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.SignInModal-inner {
+    position: relative;
+    padding: 28px 32px 24px;
+}
+
+.SignInModal-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    color: #666;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+.SignInModal-close:hover {
+    background: #f5f5f5;
+    color: #1a1a1a;
+}
+
+.SignInModal-close svg {
+    width: 18px;
+    height: 18px;
+}
+
+.SignInModal-header {
+    margin-bottom: 20px;
+}
+
+.SignInModal-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+}
+
+.SignInModal-subtitle {
+    margin: 6px 0 0;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.SignInModal-google {
+    height: 48px;
+    border-radius: 10px;
+    font-weight: 500;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.SignInModal-google:hover {
+    border-color: #d0d0d0;
+    color: #1a1a1a;
+}
+
+.SignInModal-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 20px 0 16px;
+}
+
+.SignInModal-divider::before,
+.SignInModal-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.SignInModal-divider span {
+    font-size: 0.8rem;
+    color: #999;
+    text-transform: lowercase;
+}
+
+.SignInModal-segment {
+    margin-bottom: 18px;
+    padding: 4px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+.SignInModal-segment .ant-segmented-item {
+    border-radius: 8px;
+}
+
+.SignInModal-segment .ant-segmented-item-selected {
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.SignInModal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.SignInModal-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.SignInModal-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.SignInModal-label-row .SignInModal-label {
+    margin: 0 0 4px 0;
+}
+
+.SignInModal-input,
+.SignInModal-input.ant-input-affix-wrapper {
+    border-radius: 10px;
+    border-color: #e5e5e5;
+}
+
+.SignInModal-input:hover,
+.SignInModal-input.ant-input-affix-wrapper:hover {
+    border-color: #d0d0d0;
+}
+
+.SignInModal-input:focus,
+.SignInModal-input.ant-input-affix-wrapper-focused {
+    border-color: var(--brand-color, #eb493a);
+    box-shadow: 0 0 0 2px rgba(235, 73, 58, 0.12);
+}
+
+/* OTP: Email + Send OTP button row */
+.SignInModal-otp-email-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.SignInModal-otp-email-wrap {
+    flex: 1;
+    min-width: 0;
+}
+
+.SignInModal-otp-email-wrap .SignInModal-label {
+    margin-bottom: 4px;
+}
+
+.SignInModal-otp-btn {
+    border-radius: 10px;
+    font-weight: 500;
+    white-space: nowrap;
+    height: 40px !important;
+    padding: 4px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* OTP: 6 small digit boxes */
+.SignInModal-otp-boxes {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.SignInModal-otp-box {
+    width: 100%;
+    height: 48px;
+    border: 1.5px solid #e5e5e5;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.SignInModal-otp-box:hover {
+    border-color: #d0d0d0;
+}
+
+.SignInModal-otp-box:focus {
+    outline: none;
+    border-color: var(--brand-color, #eb493a);
+    box-shadow: 0 0 0 2px rgba(235, 73, 58, 0.15);
+}
+
+.SignInModal-otp-box::placeholder {
+    color: #bbb;
+    font-weight: 400;
+}
+
+.SignInModal-link {
+    color: var(--brand-color, #eb493a);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.SignInModal-link:hover {
+    text-decoration: underline;
+}
+
+.SignInModal-submit {
+    margin-top: 4px;
+    height: 48px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    background: var(--brand-color, #eb493a) !important;
+    border-color: var(--brand-color, #eb493a) !important;
+}
+
+.SignInModal-submit:hover,
+.SignInModal-submit:focus-visible {
+    background: var(--brand-color, #eb493a) !important;
+    border-color: var(--brand-color, #eb493a) !important;
+    opacity: 0.92;
+}
+
+.SignInModal-footer {
+    margin: 24px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.SignInModal-footer .SignInModal-link {
+    font-weight: 500;
+}

@@ -1,0 +1,383 @@
+/* Booking Activity – full width, grid, compact date/slot, participant modal */
+
+.BookingActivity {
+  width: 100%;
+}
+
+.BookingActivityHeader {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.BookingActivityTitle {
+  color: var(--heading-color);
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.BookingActivitySubtitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-color);
+  line-height: 1.45;
+}
+
+.BookingActivityForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Full-width grid: 3 cols → 2 → 1 */
+.BookingActivityGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+@media (max-width: 1024px) {
+  .BookingActivityGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .BookingActivityGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Footer – full width */
+.BookingActivityFooter {
+  padding: 20px 24px;
+  background: rgb(248 249 250);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--borderRadiusLarge);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.BookingActivityTotal {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.BookingActivityTotalLabel {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.BookingActivityTotalAmount {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--brand-color);
+}
+
+.BookingActivitySubmitBtn {
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brand-color);
+  border: none;
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.BookingActivitySubmitBtn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.BookingActivitySubmitBtn:active {
+  transform: translateY(0);
+}
+
+/* Modal – participant details */
+.BookingActivityModalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.BookingActivityModal {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.BookingActivityModalHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.BookingActivityModalTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.BookingActivityModalClose {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.BookingActivityModalClose:hover {
+  background: #f0f0f0;
+  color: #1a1a1a;
+}
+
+.BookingActivityModalClose svg {
+  width: 18px;
+  height: 18px;
+}
+
+.BookingActivityModalSubtitle {
+  margin: 0;
+  padding: 10px 0px;
+  font-size: 13px;
+  color: var(--text-color);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.BookingActivityModalBody {
+  padding: 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.BookingActivityModalRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.BookingActivityModalLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.BookingActivityModalInput {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--borderRadius);
+  color: var(--heading-color);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.BookingActivityModalInput:focus {
+  outline: none;
+  border-color: var(--brand-color);
+  box-shadow: 0 0 0 2px rgba(235, 73, 58, 0.15);
+}
+
+/* Antd Modal footer – participant modal */
+.BookingActivityParticipantModal .ant-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.BookingActivityModalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Calendar modal – inner content (antd Modal provides wrapper) */
+.BookingActivityCalendarModalWrap .ant-modal-body {
+  padding: 16px 24px 24px;
+}
+
+.BookingActivityCalendarModal {
+  position: relative;
+  width: 100%;
+}
+
+.BookingActivityCalendarNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.BookingActivityCalendarNavBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--heading-color);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.BookingActivityCalendarNavBtn:hover {
+  background: #f5f5f5;
+  border-color: #ddd;
+}
+
+.BookingActivityCalendarNavBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.BookingActivityCalendarNavTitles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex: 1;
+}
+
+.BookingActivityCalendarNavTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.BookingActivityCalendarMonths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 640px) {
+  .BookingActivityCalendarMonths {
+    grid-template-columns: 1fr;
+  }
+}
+
+.BookingActivityCalendarMonth {
+  min-width: 0;
+}
+
+.BookingActivityCalendarWeekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.BookingActivityCalendarWeekday {
+  font-size: 11px;
+  font-weight: 600;
+  color: #888;
+  text-align: center;
+}
+
+.BookingActivityCalendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.BookingActivityCalendarCell {
+  aspect-ratio: 1;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--heading-color);
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.BookingActivityCalendarCell:hover:not(.BookingActivityCalendarCellEmpty):not(.BookingActivityCalendarCellPast):not(.BookingActivityCalendarCellSelected) {
+  background: rgba(235, 73, 58, 0.08);
+  border-color: var(--brand-color);
+}
+
+.BookingActivityCalendarCellSelected {
+  background: var(--brand-color);
+  border-color: var(--brand-color);
+  color: #fff;
+}
+
+.BookingActivityCalendarCellPast {
+  color: #bbb;
+  cursor: not-allowed;
+  background: #f9f9f9;
+  border-color: #eee;
+}
+
+.BookingActivityCalendarCellEmpty {
+  background: transparent;
+  border-color: transparent;
+  cursor: default;
+}
+
+.BookingActivityCalendarClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #666;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.BookingActivityCalendarClose:hover {
+  background: #f0f0f0;
+  color: #1a1a1a;
+}
+
+.BookingActivityCalendarClose svg {
+  width: 18px;
+  height: 18px;
+}

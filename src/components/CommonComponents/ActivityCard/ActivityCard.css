@@ -1,0 +1,253 @@
+.ActivityCard {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid #f0f0f0;
+    height: 100%;
+}
+
+.ActivityCard:hover {
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+    transform: translateY(-4px);
+    border-color: var(--brand-color);
+}
+
+.InnerImageSwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.InnerImageSwiper .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background: white;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.InnerImageSwiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 18px;
+    border-radius: 4px;
+}
+
+.InnerImageSwiper .swiper-pagination {
+    bottom: 8px !important;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ActivityCard:hover .InnerImageSwiper .swiper-pagination {
+    opacity: 1;
+}
+
+.InnerPrev,
+.InnerNext {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    color: #000;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.InnerPrev svg,
+.InnerNext svg {
+    width: 10px;
+    height: 10px;
+}
+
+.InnerNext {
+    right: 8px;
+}
+
+.InnerPrev {
+    left: 8px;
+}
+
+.ActivityCard:hover .InnerPrev,
+.ActivityCard:hover .InnerNext {
+    opacity: 0.8;
+}
+
+.ActivityCard:hover .InnerPrev:hover,
+.ActivityCard:hover .InnerNext:hover {
+    opacity: 1;
+    background: white;
+    transform: translateY(-50%) scale(1.15);
+}
+
+.ActivityImageContainer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    background: #f7f7f7;
+}
+
+.ActivityImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.FavoriteBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.FavoriteBtn:hover {
+    background: white;
+    color: #e74c3c;
+    transform: scale(1.1);
+}
+
+.FavoriteBtn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.DiscountTag {
+    background: #27ae60;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.ActivityDetails {
+    padding: 10px 14px;
+}
+
+.ActivityMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.ActivityCategory {
+    color: var(--brand-color);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+}
+
+.ActivityRating {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.ActivityLocation {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: var(--brand-color);
+    background: #fdf2ff;
+    padding: 2px 10px;
+    border-radius: 100px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.ActivityLocation svg {
+    width: 12px;
+    height: 12px;
+    color: var(--brand-color);
+}
+
+.ActivityRating svg {
+    width: 11px;
+    height: 11px;
+    color: #ffb400;
+}
+
+.RatingVal {
+    font-size: 11px;
+    font-weight: 700;
+    color: #333;
+}
+
+.ReviewCount {
+    font-size: 10px;
+    color: #aaa;
+}
+
+.ActivityTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 6px 0;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 38px;
+}
+
+.ActivityPrice {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    border-top: 1px solid #f5f5f5;
+    padding-top: 8px;
+}
+
+.PriceLeft {
+    display: flex;
+    flex-direction: column;
+}
+
+.FromTag {
+    font-size: 10px;
+    color: #999;
+    text-transform: lowercase;
+}
+
+.PriceWrap {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.OriginalPrice {
+    font-size: 11px;
+    color: #bbb;
+    text-decoration: line-through;
+}
+
+.CurrentPrice {
+    font-size: 17px;
+    font-weight: 700;
+    color: #000;
+}

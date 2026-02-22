@@ -1,0 +1,225 @@
+.HomeReviewSection {
+    position: relative;
+    background:var(--sectionBack);
+    /* Deep dark purple/black */
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    /* Reduced as TSX has padding too */
+    border-top: 1px solid rgba(148, 15, 219, 0.2);
+    border-bottom: 1px solid rgba(148, 15, 219, 0.2);
+}
+
+.HomeReviewSection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Adventure Doodle Pattern - More visible on dark */
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 20 L30 20 L20 10 Z' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.08'/%3E%3Ccircle cx='50' cy='50' r='5' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.08'/%3E%3Cpath d='M80 80 L90 80 L85 90 Z' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.08'/%3E%3Cpath d='M70 10 Q 80 5 90 10' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.08'/%3E%3Cpath d='M10 70 L20 80 L10 90' fill='none' stroke='%23ffffff' stroke-width='0.5' opacity='0.08'/%3E%3C/svg%3E");
+    background-size: 250px 250px;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+/* Creative floating glows with animation */
+.HomeReviewSection::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(148, 15, 219, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(80px);
+    animation: floatGlow 15s infinite alternate ease-in-out;
+}
+
+@keyframes floatGlow {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-50px, 30px);
+    }
+}
+
+.HomeReviewSection .GlowTop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(148, 15, 219, 0.08) 0%, transparent 80%);
+    z-index: 0;
+    pointer-events: none;
+    animation: pulseGlow 8s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+    from {
+        opacity: 0.4;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    to {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+
+#HomeReviewDesktop {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+#HomeReviewDesktop .HomeReviewHeader h2 {
+    color: white;
+}
+
+#HomeReviewDesktop .SectionSubtitle {
+    color: rgba(255, 255, 255, 0.7);
+    /* margin-top: 5px; */
+}
+
+#HomeReviewDesktop .VideoReviewsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: center;
+}
+
+#HomeReviewDesktop .VideoCard {
+    background: #1a1a1a;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    /* border: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+#HomeReviewDesktop .VideoCard:hover {
+    transform: translateY(-10px);
+    border-color: var(--brand-color);
+    box-shadow: 0 10px 30px rgba(148, 15, 219, 0.2);
+}
+
+
+#HomeReviewDesktop .VideoThumbnailContainer {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 10/16;
+    object-fit: contain;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+#HomeReviewDesktop .VideoThumbnailContainer img,
+#HomeReviewDesktop .VideoThumbnailContainer .VideoReviewPlayer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+#HomeReviewDesktop .VideoCard:hover .VideoThumbnailContainer img,
+#HomeReviewDesktop .VideoCard:hover .VideoThumbnailContainer .VideoReviewPlayer {
+    transform: scale(1.05);
+}
+
+#HomeReviewDesktop .PlayIconOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+#HomeReviewDesktop .PlayButtonCircle {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#HomeReviewDesktop .VideoCard:hover .PlayButtonCircle {
+    background: var(--brand-color);
+    border-color: var(--brand-color);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(148, 15, 219, 0.3);
+}
+
+#HomeReviewDesktop .PlayButtonCircle svg {
+    width: 18px;
+    height: 18px;
+    margin-left: 2px;
+}
+
+#HomeReviewDesktop .VideoCardBadge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    padding: 3px 10px;
+    border-radius: 100px;
+    color: white;
+    font-size: 9px;
+    font-weight: 600;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#HomeReviewDesktop .VideoCardBadge svg {
+    width: 10px;
+    height: 10px;
+}
+
+#HomeReviewDesktop .MuteBtn {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+
+#HomeReviewDesktop .MuteBtn:hover {
+    background: rgba(148, 15, 219, 0.6);
+    transform: scale(1.1);
+}
+
+#HomeReviewDesktop .MuteBtn svg {
+    width: 16px;
+    height: 16px;
+}

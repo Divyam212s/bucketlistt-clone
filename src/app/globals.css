@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+:root {
+  --background: white;
+  --foreground: #f0f0f0;
+  --brand-color: #EB493A;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --text-color: rgb(102, 102, 102);
+  --borderRadius: 5px;
+  --borderRadiusLarge: 15px;
+  --fontMedium: 1.1rem;
+  --sectionBack: #c13c30e6;
+  --breadcrumb-separator: #ccc;
+  --breadcrumb-current: #000;
+  --star-rating-color: #e6b800;
+  --icon-color: rgb(102, 102, 102);
+  --heading-color: #1a1a1a;
+  --small-text-highlight-size: 13px;
+  --medium-text-size: 17px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand-color);
+  --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+p {
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: var(--text-color);
+}
+
+.MaxWidthComponent {
+  max-width: 1200px;
+}
+
+.MarginAuto {
+  margin: 0 auto;
+}
+
+.MaxWidth800 {
+  max-width: 800px;
+}
+
+.MaxWidth600 {
+  max-width: 600px;
+}
+
+.MaxWidth500 {
+  max-width: 500px;
+}
+
+
+.MaxWidth1000 {
+  max-width: 1000px;
+}
+
+.PaddingBottomDesktopOnly {
+  padding-bottom: 80px;
+}
+
+.PrimaryHeadingFont {
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 50px;
+}
+
+
+.SecondaryHeadingFont {
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 35px;
+}
+
+.ColorWhite {
+  color: white;
+}
+
+.PaddingTop15 {
+  padding-top: 15px !important;
+}
+
+.PaddingTop30 {
+  padding-top: 30px !important;
+}
+
+.PaddingTop50 {
+  padding-top: 50px !important;
+}
+
+.PaddingTop80 {
+  padding-top: 80px !important;
+}
+
+.PaddingTop100 {
+  padding-top: 50px !important;
+}
+
+.PaddingBottom15 {
+  padding-bottom: 15px !important;
+}
+
+.PaddingBottom30 {
+  padding-bottom: 30px !important;
+}
+
+.PaddingBottom50 {
+  padding-bottom: 50px !important;
+}
+
+.PaddingBottom80 {
+  padding-bottom: 80px !important;
+}
+
+.PaddingBottom100 {
+  padding-bottom: 100px !important;
+}
+
+
+.MarginTop30 {
+  margin-top: 30px !important;
+}
+
+.MarginTop50 {
+  margin-top: 50px !important;
+}
+
+.MarginBottom20 {
+  margin-bottom: 20px !important;
+}
+
+
+.MarginBottom10 {
+  margin-bottom: 10px !important;
+}
+
+
+.MarginBottom30 {
+  margin-bottom: 30px !important;
+}
+
+.MarginBottom50 {
+  margin-bottom: 50px !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.SwooshContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.SwooshSvg {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  height: 28px;
+  z-index: 5;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.DestinationHeroContainer .SwooshSvg {
+  fill: transparent;
+  stroke: var(--brand-color);
+}
+
+.DestinationHeroContainer .SwooshSvg path {
+  stroke: var(--brand-color);
+  fill: transparent;
+}

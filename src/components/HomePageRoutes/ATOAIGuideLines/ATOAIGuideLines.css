@@ -1,0 +1,138 @@
+.ATOAISection {
+    background-color: #ffffff;
+    border-top: 1px solid #f0f0f0;
+}
+
+.ATOAIContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ATOAILogoContainer {
+    margin: 10px 0;
+}
+
+.ATOAILogo {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+.ATOAIDescription {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.8;
+    margin-bottom: 50px;
+}
+
+.BrandHighlight {
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.ATOAILink {
+    font-weight: 700;
+    color: var(--brand-color);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: all 0.3s ease;
+}
+
+.ATOAILink:hover {
+    color: #1a1a1a;
+    text-decoration-color: var(--brand-color);
+}
+
+
+.MadeInContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.MadeInWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.MadeInHeading {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.SlidingTextContainer {
+    height: 2.2rem;
+    /* Adjusted for heading size */
+    overflow: hidden;
+    position: relative;
+}
+
+.SlidingTextWrapper {
+    display: flex;
+    flex-direction: column;
+    animation: textSlide 8s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+.SlidingTextItem {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--brand-color);
+    height: 2.2rem;
+    line-height: 2.2rem;
+    display: block;
+}
+
+@keyframes textSlide {
+
+    0%,
+    25% {
+        transform: translateY(0);
+    }
+
+    30%,
+    55% {
+        transform: translateY(-2.2rem);
+    }
+
+    60%,
+    85% {
+        transform: translateY(-4.4rem);
+    }
+
+    90%,
+    100% {
+        transform: translateY(-6.6rem);
+    }
+}
+
+.IndiaFlagContainer {
+    width: 120px;
+    height: 70px;
+    background: #f0fdf0;
+    /* Subtle green tint background like in image */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.MadeInContainer:hover .IndiaFlagContainer {
+    transform: scale(1.05);
+}
+
+.IndiaFlag {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}

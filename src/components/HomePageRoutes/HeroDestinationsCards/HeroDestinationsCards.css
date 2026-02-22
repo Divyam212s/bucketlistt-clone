@@ -1,0 +1,169 @@
+#HeroDestinationsCardsMainContainer {
+    position: relative;
+    padding-bottom: 0;
+    overflow: visible;
+}
+
+#HeroDestinationsCardsMainContainer .DestionatinSkylineImageContainer {
+    z-index: 0;
+    pointer-events: none;
+    background-image: url("/Images/BackgroundSkylineImage/Skylines.png");
+    background-position: bottom;
+    /* background-repeat: no-repeat; */
+    background-size: 30%;
+    width: 100%;
+    /* height: 100%; */
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0px;
+    top: 0px;
+    background-repeat: repeat-x;
+    opacity: 0.15;
+}
+
+#HeroDestinationsCardsMainContainer #HeroDestinationsCards {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 24px;
+}
+
+#HeroDestinationsCardsMainContainer .DestinationsSwiper {
+    padding-bottom: 48px;
+    overflow: visible;
+}
+
+#HeroDestinationsCardsMainContainer .DestinationsSwiper .swiper-wrapper {
+    align-items: flex-end;
+}
+
+#HeroDestinationsCards .DestinationCard {
+    height: 200px;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: var(--borderRadiusLarge);
+    overflow: hidden;
+    background: #111;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#HeroDestinationsCards .DestinationCard:hover {
+    transform: translateY(-8px);
+}
+
+#HeroDestinationsCards .CardImageContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#HeroDestinationsCards .CardImageContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 50%,
+            rgba(0, 0, 0, 0.7) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+#HeroDestinationsCards .CardImageContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    z-index: 1;
+}
+
+#HeroDestinationsCards .DestinationCard:hover .CardImageContainer img {
+    transform: scale(1.1);
+}
+
+#HeroDestinationsCards .CardOverlay {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    right: 15px;
+    z-index: 5;
+}
+
+#HeroDestinationsCards .ContentBlur {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px 10px;
+    /* background: rgba(255, 255, 255, 0.1); */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+    /* border-radius: var(--borderRadiusLarge); */
+    transition: all 0.3s ease;
+    /* backdrop-filter: blur(1px); */
+}
+
+#HeroDestinationsCards .TextContent {
+    flex: 1;
+}
+
+#HeroDestinationsCards .DestinationTitle {
+    color: white;
+    font-size: var(--fontMedium);
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+#HeroDestinationsCards .DestinationSubtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+#HeroDestinationsCards .ArrowButton {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    margin-left: 12px;
+    transition: transform 0.3s east, background 0.3s ease;
+    display: none;
+}
+
+#HeroDestinationsCards .ArrowButton svg {
+    width: 18px;
+    height: 18px;
+
+}
+
+#HeroDestinationsCards .DestinationCard:hover .ArrowButton {
+    transform: rotate(45deg);
+    background: var(--brand-color);
+    color: white;
+}
+
+#HeroDestinationsCards .swiper-pagination-bullet {
+    background: var(--brand-color);
+    opacity: 0.3;
+}
+
+#HeroDestinationsCards .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 24px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+#HeroDestinationsCards .swiper-horizontal>.swiper-pagination-bullets,
+#HeroDestinationsCards .swiper-pagination-bullets.swiper-pagination-horizontal {
+    top: 94% !important;
+}

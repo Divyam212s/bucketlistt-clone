@@ -1,0 +1,105 @@
+#HomeWhyChoose {
+    background-color: #ffffff;
+}
+
+.WhyChooseContainer {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.WhyChooseContentLeft {
+    flex: 1;
+    max-width: 320px;
+}
+
+.WhyChooseContentLeft h2 {
+    margin-bottom: 20px;
+}
+
+.WhyChooseDescription {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.BrandAccentLine {
+    width: 60px;
+    height: 3px;
+    background: var(--brand-color);
+    border-radius: 10px;
+}
+
+.WhyChooseGrid.creative {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.FeatureItem {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.IconBox {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: #fbf9ff;
+    border: 1px solid #f2eefa;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-color);
+    transition: all 0.4s ease;
+}
+
+.FeatureItem:hover .IconBox {
+    background: var(--brand-color);
+    color: #ffffff;
+    transform: translateY(-5px) rotate(-8deg);
+    box-shadow: 0 10px 20px rgba(148, 15, 219, 0.15);
+}
+
+.IconBox svg {
+    width: 22px;
+    height: 22px;
+}
+
+.FeatureText h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.FeatureText p {
+    font-size: 0.88rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+/* Background accent */
+#HomeWhyChoose {
+    position: relative;
+    overflow: hidden;
+}
+
+#HomeWhyChoose::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(148, 15, 219, 0.03) 0%, transparent 70%);
+    z-index: 0;
+    pointer-events: none;
+}

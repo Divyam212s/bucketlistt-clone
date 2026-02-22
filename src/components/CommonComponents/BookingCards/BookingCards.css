@@ -1,0 +1,543 @@
+/* Booking card – compact layout, date pills, slots, participants */
+
+.BookingActivityCard {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--borderRadiusLarge);
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.BookingActivityCardHead {
+  background: rgb(248 249 250);
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.BookingActivityCardHeadTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.BookingActivityCardBadge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--brand-color);
+}
+
+.BookingActivityRemoveCardBtn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #666;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.BookingActivityRemoveCardBtn:hover {
+  color: #b91c1c;
+  background: rgba(185, 28, 28, 0.06);
+  border-color: rgba(185, 28, 28, 0.3);
+}
+
+.BookingActivityRemoveCardBtn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.BookingActivityCardSummary {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.BookingActivityCardThumb {
+  width: 72px;
+  min-width: 72px;
+  min-height: 56px;
+  border-radius: var(--borderRadius);
+  overflow: hidden;
+  background: #f0f0f0;
+  align-self: stretch;
+}
+
+.BookingActivityCardThumb img {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.BookingActivityCardInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.BookingActivityCardCategory {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--brand-color);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.BookingActivityCardTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.BookingActivityCardLocation {
+  font-size: 11px;
+  color: var(--text-color);
+  margin: 0 0 6px 0;
+}
+
+.BookingActivityCardPrice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.BookingActivityCardPriceLeft {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.BookingActivityCardPriceOriginal {
+  font-size: 11px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.BookingActivityCardPriceCurrent {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.BookingActivityCardDiscountTag {
+  font-size: 10px;
+  font-weight: 700;
+  color: #2e7d32;
+  background: rgba(46, 125, 50, 0.12);
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.BookingActivityCardBody {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.BookingActivitySectionLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 8px;
+}
+
+/* Date row */
+.BookingActivityDateSection {
+  margin-bottom: 0;
+}
+
+.BookingActivityDateRow {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.BookingActivityDatePills {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.BookingActivityDatePills::-webkit-scrollbar {
+  height: 4px;
+}
+
+.BookingActivityDatePills::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.BookingActivityDatePill {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  min-width: 64px;
+  min-height: 52px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.BookingActivityDatePill:hover {
+  border-color: var(--brand-color);
+  background: rgba(235, 73, 58, 0.04);
+}
+
+.BookingActivityDatePillSelected {
+  background: rgba(235, 73, 58, 0.1);
+  border-color: var(--brand-color);
+  box-shadow: 0 0 0 2px rgba(235, 73, 58, 0.2);
+}
+
+.BookingActivityDatePillDay {
+  font-size: 10px;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.BookingActivityDatePillSelected .BookingActivityDatePillDay {
+  color: var(--brand-color);
+}
+
+.BookingActivityDatePillDate {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 4px;
+}
+
+.BookingActivityDatePillSelected .BookingActivityDatePillDate {
+  color: var(--brand-color);
+}
+
+.BookingActivityMoreDates {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 12px;
+  min-height: 52px;
+  min-width: 64px;
+  background: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-color);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.BookingActivityMoreDates:hover {
+  background: #eee;
+  border-color: #ddd;
+}
+
+.BookingActivityMoreDates svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Slot chips – locked until date selected */
+.BookingActivitySlotSection {
+  margin-bottom: 0;
+}
+
+.BookingActivitySlotHint {
+  font-size: 11px;
+  color: #888;
+  margin: -4px 0 8px 0;
+  font-style: italic;
+}
+
+.BookingActivitySlotChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.BookingActivitySlotChip {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-color);
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, opacity 0.2s;
+  font-family: inherit;
+}
+
+.BookingActivitySlotChip:hover {
+  border-color: var(--brand-color);
+  color: var(--brand-color);
+  background: rgba(235, 73, 58, 0.04);
+}
+
+.BookingActivitySlotChipSelected {
+  background: var(--brand-color);
+  border-color: var(--brand-color);
+  color: #fff;
+}
+
+.BookingActivitySlotChipLocked,
+.BookingActivitySlotChip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f5f5f5;
+  border-color: #e8e8e8;
+  color: #999;
+}
+
+.BookingActivitySlotChipLocked:hover,
+.BookingActivitySlotChip:disabled:hover {
+  border-color: #e8e8e8;
+  color: #999;
+  background: #f5f5f5;
+}
+
+.BookingActivitySlotChipsLocked .BookingActivitySlotChipSelected {
+  background: #e8e8e8;
+  border-color: #e8e8e8;
+  color: #999;
+}
+
+/* Participant section */
+.BookingActivityParticipantSection {
+  margin-bottom: 0;
+}
+
+.BookingActivityParticipantList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.BookingActivityParticipantSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  background: rgb(248 250 252);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--borderRadius);
+  position: relative;
+  padding-right: 88px;
+}
+
+.BookingActivityParticipantSummaryName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.BookingActivityParticipantSummaryContact {
+  font-size: 11px;
+  color: var(--text-color);
+}
+
+.BookingActivityParticipantSummaryActions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.BookingActivityParticipantEdit {
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--brand-color);
+  background: transparent;
+  border: 1px solid var(--brand-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.BookingActivityParticipantEdit:hover {
+  background: var(--brand-color);
+  color: #fff;
+}
+
+.BookingActivityParticipantDelete {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #b91c1c;
+  background: transparent;
+  border: 1px solid rgba(185, 28, 28, 0.5);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.BookingActivityParticipantDelete:hover {
+  background: rgba(185, 28, 28, 0.1);
+  color: #991b1b;
+  border-color: #b91c1c;
+}
+
+.BookingActivityParticipantDelete svg {
+  width: 14px;
+  height: 14px;
+}
+
+.BookingActivityParticipantActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.BookingActivityParticipantBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--brand-color);
+  background: rgba(235, 73, 58, 0.08);
+  border: 1px dashed var(--brand-color);
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.BookingActivityParticipantBtn:hover {
+  background: rgba(235, 73, 58, 0.14);
+}
+
+.BookingActivityParticipantBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.BookingActivityCopyBtn {
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--brand-color);
+  background: transparent;
+  border: 1px solid var(--brand-color);
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.BookingActivityCopyBtn:hover {
+  background: var(--brand-color);
+  color: #fff;
+}
+
+/* Ticket counter – one participant, multiple tickets */
+.BookingActivityTicketCounter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  background: rgb(248 250 252);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: var(--borderRadius);
+}
+
+.BookingActivityTicketCounter .BookingActivitySectionLabel {
+  margin-bottom: 0;
+}
+
+.BookingActivityTicketCounterControls {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.BookingActivityTicketCounterBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--heading-color);
+  background: #fff;
+  border: none;
+  border-right: 1px solid #e5e5e5;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.BookingActivityTicketCounterControls .BookingActivityTicketCounterBtn:last-of-type {
+  border-right: none;
+  border-left: 1px solid #e5e5e5;
+}
+
+.BookingActivityTicketCounterBtn:hover:not(:disabled) {
+  background: rgba(235, 73, 58, 0.08);
+  color: var(--brand-color);
+}
+
+.BookingActivityTicketCounterBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.BookingActivityTicketCounterValue {
+  min-width: 36px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--heading-color);
+}

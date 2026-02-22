@@ -1,0 +1,25 @@
+/* Common confirmation / notification modal – slick, content-only pass */
+
+.ConfirmationModalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 100%;
+}
+
+.ConfirmationModalConfirmPrimary.ant-btn-primary {
+  background: var(--brand-color);
+  border-color: var(--brand-color);
+}
+
+.ConfirmationModalConfirmPrimary.ant-btn-primary:hover {
+  background: var(--brand-color);
+  border-color: var(--brand-color);
+  opacity: 0.9;
+}
+
+.ConfirmationModalContent {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
