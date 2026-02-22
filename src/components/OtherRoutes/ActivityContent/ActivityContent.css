@@ -222,123 +222,226 @@
   color: var(--brand-color);
 }
 
-/* Activity cards – 2 per row grid */
+/* Activity cards – 3 per row, minimal compact layout */
 .ActivityContent .ActivityContentActivities {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
 
-.ActivityContent .ActivityContentCard {
+.ActivityContent .ActivityContentSelectCard {
   background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: var(--borderRadiusLarge);
-  padding: 10px 10px;
-  cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.ActivityContent .ActivityContentCard:hover {
-  border-color: rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-}
-
-.ActivityContent .ActivityContentCardAdded {
-  border-color: rgba(235, 73, 58, 0.35);
-  background: rgba(235, 73, 58, 0.04);
-}
-
-.ActivityContent .ActivityContentCardAdded:hover {
-  border-color: rgba(235, 73, 58, 0.45);
-  box-shadow: 0 2px 12px rgba(235, 73, 58, 0.08);
-}
-
-.ActivityContent .ActivityContentCardBody {
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  height: 100%;
 }
 
-.ActivityContent .ActivityContentCardTitle {
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.35;
-  color: var(--heading-color);
-  margin: 0;
+.ActivityContent .ActivityContentSelectCard:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  border-color: var(--brand-color);
 }
 
-.ActivityContent .ActivityContentCardDetail {
+.ActivityContent .ActivityContentSelectCardAdded {
+  border-color: rgba(235, 73, 58, 0.35);
+  background: rgba(235, 73, 58, 0.03);
+}
+
+.ActivityContent .ActivityContentSelectCardImageWrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #f7f7f7;
+}
+
+.ActivityContent .ActivityContentSelectCardImageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.ActivityContent .ActivityContentSelectCard:hover .ActivityContentSelectCardImageWrap img {
+  transform: scale(1.03);
+}
+
+.ActivityContent .ActivityContentSelectCardBody {
+  padding: 8px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.ActivityContent .ActivityContentSelectCardCategory {
+  color: var(--brand-color);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.ActivityContent .ActivityContentSelectCardTitle {
   font-size: 13px;
-  line-height: 1.4;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 34px;
+}
+
+.ActivityContent .ActivityContentSelectCardDetail {
+  font-size: 11px;
+  line-height: 1.35;
   color: var(--text-color);
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.ActivityContent .ActivityContentCardFooter {
-  display: flex;
+.ActivityContent .ActivityContentSelectCardLocation {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  gap: 4px;
+  font-size: 10px;
+  color: var(--brand-color);
+  font-weight: 600;
 }
 
-.ActivityContent .ActivityContentCardPrice {
+.ActivityContent .ActivityContentSelectCardLocation svg {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  color: var(--brand-color);
+}
+
+.ActivityContent .ActivityContentSelectCardPriceRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  border-top: 1px solid #f5f5f5;
+  padding-top: 5px;
+  margin-top: auto;
+}
+
+.ActivityContent .ActivityContentSelectCardPriceLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.ActivityContent .ActivityContentSelectCardFrom {
+  font-size: 9px;
+  color: #999;
+  text-transform: lowercase;
+}
+
+.ActivityContent .ActivityContentSelectCardPriceWrap {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: 4px;
 }
 
-.ActivityContent .ActivityContentCardOriginalPrice {
-  font-size: 13px;
-  color: var(--text-color);
+.ActivityContent .ActivityContentSelectCardOriginalPrice {
+  font-size: 10px;
+  color: #bbb;
   text-decoration: line-through;
 }
 
-.ActivityContent .ActivityContentCardCurrentPrice {
-  font-size: 17px;
-  font-weight: 600;
-  color: var(--brand-color);
+.ActivityContent .ActivityContentSelectCardCurrentPrice {
+  font-size: 15px;
+  font-weight: 700;
+  color: #000;
 }
 
-.ActivityContent .ActivityContentCardAddBtn {
+.ActivityContent .ActivityContentSelectCardDiscount {
+  background: #27ae60;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ActivityContent .ActivityContentSelectCardActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.ActivityContent .ActivityContentSelectCardAddBtn {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  padding: 6px 12px;
+  gap: 4px;
+  padding: 6px 10px;
   background: transparent;
   color: var(--brand-color);
   border: 1px solid var(--brand-color);
-  border-radius: var(--borderRadius);
-  font-size: 12px;
-  font-weight: 500;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-decoration: none;
 }
 
-.ActivityContent .ActivityContentCardAddBtnIcon {
+.ActivityContent .ActivityContentSelectCardAddBtnIcon {
   display: inline-flex;
 }
 
-.ActivityContent .ActivityContentCardAddBtnIcon svg {
+.ActivityContent .ActivityContentSelectCardAddBtnIcon svg {
   width: 14px;
   height: 14px;
 }
 
-.ActivityContent .ActivityContentCardAddBtn:hover {
-  background: rgba(235, 73, 58, 0.06);
+.ActivityContent .ActivityContentSelectCardAddBtn:hover {
+  background: rgba(235, 73, 58, 0.08);
 }
 
-.ActivityContent .ActivityContentCardAddBtnAdded {
-  border-color: rgba(0, 0, 0, 0.15);
+.ActivityContent .ActivityContentSelectCardAddBtnAdded {
+  border-color: rgba(0, 0, 0, 0.2);
   color: var(--text-color);
   cursor: default;
 }
 
-.ActivityContent .ActivityContentCardAddBtnAdded:hover {
+.ActivityContent .ActivityContentSelectCardAddBtnAdded:hover {
   background: transparent;
+}
+
+.ActivityContent .ActivityContentSelectCardShowDetailsBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  background: var(--brand-color);
+  color: #fff;
+  border: 1px solid var(--brand-color);
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.ActivityContent .ActivityContentSelectCardShowDetailsBtn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
 }
 
 .ActivityContent .ActivityContentShowMoreBtn {
@@ -411,6 +514,12 @@
 .ActivityContent .ActivityContentScrollToSelectBtnIcon svg {
   width: 18px;
   height: 18px;
+}
+
+@media (max-width: 900px) {
+  .ActivityContent .ActivityContentActivities {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 640px) {

@@ -1,0 +1,131 @@
+#WhoWeAre {
+    background-color: #ffffff;
+}
+
+.WhoWeAreContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.WhoWeAreImageWrap {
+    position: relative;
+    border-radius: var(--borderRadiusLarge);
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.WhoWeAreImageWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay with clip-path: light brand tint + adventure gradient */
+.WhoWeAreImageOverlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    clip-path: inset(0 round var(--borderRadiusLarge));
+    background: linear-gradient(145deg,
+            rgba(235, 73, 58, 0.14) 0%,
+            rgba(235, 73, 58, 0.06) 35%,
+            rgba(235, 73, 58, 0.02) 70%,
+            transparent 100%);
+}
+
+.WhoWeAreContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.WhoWeAreHeading {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    color: var(--heading-color);
+    margin: 0;
+}
+
+.WhoWeAreTagline {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--brand-color);
+    margin: 0;
+}
+
+.WhoWeAreStatsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+}
+
+.WhoWeAreStatItem:first-child {
+    grid-column: 1 / -1;
+}
+
+.WhoWeAreStatItem {
+    display: flex;
+align-items: center !important;
+    /* flex-direction: column; */
+    gap: 4px;
+}
+
+.WhoWeAreStatValue {
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: var(--heading-color);
+}
+
+.WhoWeAreStatLabel {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+.WhoWeAreDescription {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.WhoWeAreCta {
+    font-size: 0.95rem;
+    color: var(--heading-color);
+    font-weight: 500;
+}
+
+.WhoWeAreCta a {
+    color: var(--brand-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.WhoWeAreCta a:hover {
+    opacity: 0.85;
+    text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+    .WhoWeAreContainer {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .WhoWeAreImageWrap {
+        max-height: 320px;
+        aspect-ratio: 16/10;
+    }
+
+    .WhoWeAreStatsGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}

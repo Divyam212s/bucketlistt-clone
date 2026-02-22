@@ -11,7 +11,7 @@ const BestSellersDesktop = () => {
     return (
         <div id="BestSellersDesktop" className="MaxWidthComponent MarginAuto PaddingTop50 ">
             <div className="BestSellersHeader">
-                <h2 className="SecondaryHeadingFont">Best Sellers</h2>
+                <h2 className="SecondaryHeadingFont">Must-Try Adventurous Things to Do This Season</h2>
                 <div className="CustomNavigation">
                     <button className="PrevBtn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

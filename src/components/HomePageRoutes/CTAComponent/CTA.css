@@ -1,0 +1,242 @@
+#CTASection {
+    --cta-bg-top: #f8f6f3;
+    --cta-bg-fade: white;
+    overflow: hidden;
+}
+
+.CTATopBlock {
+    background: linear-gradient(180deg,
+            #faf9f8 0%,
+            var(--cta-bg-top) 18%,
+            var(--cta-bg-top) 100%);
+    text-align: center;
+}
+
+
+.CTACallNow {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 12px 24px;
+    background: var(--brand-color, #eb493a);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: opacity 0.2s, transform 0.2s;
+}
+.CTACallNow:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.CTAButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.CTAButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: #1a1a1a;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.CTAButton:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.CTAButton svg {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.CTABottomBlock {
+    position: relative;
+    padding: 0 24px 50px;
+    min-height: 320px;
+    background: linear-gradient(180deg,
+            var(--cta-bg-top) 0%,
+            var(--cta-bg-fade) 30%,
+            var(--cta-bg-fade) 100%);
+}
+
+/* Top-side fade: bottom of phones blend into background */
+.CTABottomBlock::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background: linear-gradient(to top, var(--cta-bg-fade) 8%, transparent 100%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.CTAPhonesWrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 270px;
+    perspective: 800px;
+}
+
+.CTAPhone {
+    position: absolute;
+    bottom: 0;
+    width: 250px;
+    max-width: 22vw;
+    transform-origin: bottom center;
+    transition: transform 0.3s ease;
+}
+
+.CTAPhone:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.CTAPhone:nth-child(1) {
+    left: 2%;
+    z-index: 1;
+    transform: rotate(-22deg) translateY(20px);
+}
+
+.CTAPhone:nth-child(1):hover {
+    transform: rotate(-22deg) translateY(12px) scale(1.02);
+}
+
+.CTAPhone:nth-child(2) {
+    left: 18%;
+    z-index: 2;
+    transform: rotate(-10deg) translateY(12px);
+}
+
+.CTAPhone:nth-child(2):hover {
+    transform: rotate(-10deg) translateY(4px) scale(1.02);
+}
+
+.CTAPhone:nth-child(3) {
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    width: 200px;
+    max-width: 26vw;
+}
+
+.CTAPhone:nth-child(3) .CTAPhoneFrame {
+    box-shadow: 0 17px 48px rgba(0, 0, 0, 0.12), 0 10px 27px rgba(0, 0, 0, 0.085);
+}
+
+.CTAPhone:nth-child(3):hover {
+    transform: translateX(-50%) translateY(-8px) scale(1.02);
+}
+
+.CTAPhone:nth-child(4) {
+    right: 18%;
+    left: auto;
+    z-index: 2;
+    transform: rotate(10deg) translateY(12px);
+}
+
+.CTAPhone:nth-child(4):hover {
+    transform: rotate(10deg) translateY(4px) scale(1.02);
+}
+
+.CTAPhone:nth-child(5) {
+    right: 2%;
+    left: auto;
+    z-index: 1;
+    transform: rotate(22deg) translateY(20px);
+}
+
+.CTAPhone:nth-child(5):hover {
+    transform: rotate(22deg) translateY(12px) scale(1.02);
+}
+
+/* Screen-only card (no phone bezel) – matches reference */
+.CTAPhoneFrame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 19;
+    max-height: 250px;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 14px 41px rgba(0, 0, 0, 0.1), 0 7px 20px rgba(0, 0, 0, 0.07);
+}
+
+.CTAPhoneScreen {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    /* Brand fade behind image */
+    background: linear-gradient(180deg,
+            var(--brand-color) 0%,
+            rgba(235, 73, 58, 0.85) 25%,
+            rgba(253, 220, 215, 0.95) 70%,
+            #fdf5f4 100%);
+}
+
+.CTAPhoneScreen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .CTATopBlock {
+        padding: 50px 20px 40px;
+    }
+
+    .CTAPhone {
+        width: 120px;
+    }
+
+    .CTAPhone:nth-child(3) {
+        width: 150px;
+    }
+
+    .CTAPhone:nth-child(1) {
+        left: -2%;
+    }
+
+    .CTAPhone:nth-child(5) {
+        right: -2%;
+    }
+}
+
+@media (max-width: 600px) {
+    .CTAPhonesWrap {
+        min-height: 300px;
+    }
+
+    .CTAPhone {
+        width: 100px;
+    }
+
+    .CTAPhone:nth-child(3) {
+        width: 130px;
+    }
+
+    .CTAPhone:nth-child(1),
+    .CTAPhone:nth-child(5) {
+        opacity: 0.85;
+    }
+}

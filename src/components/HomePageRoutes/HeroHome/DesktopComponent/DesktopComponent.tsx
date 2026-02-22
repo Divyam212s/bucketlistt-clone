@@ -1,7 +1,8 @@
 "use client"
 import { useState, useEffect } from "react";
-import { HeroHomeDeskTopImage, SlidingWords } from "../CommonValues";
-import "../HeroHome.css"
+import { HeroHomeDeskTopImage, SlidingWords, HeroHomeCta } from "../CommonValues";
+import "../HeroHome.css";
+import CtaButton from "@/components/CommonComponents/CtaButton/CtaButton";
 
 const HeroHomeDesktopComponent = () => {
     const [wordIndex, setWordIndex] = useState(0);
@@ -46,6 +47,11 @@ const HeroHomeDesktopComponent = () => {
                                 {SlidingWords[wordIndex]}
                             </span>
                         </div>
+                        <CtaButton
+                            label={HeroHomeCta.label}
+                            href={HeroHomeCta.href}
+                            external={HeroHomeCta.external}
+                        />
                         {/* <div className="DesktopSearchBarContainer">
                             <div className="MinimalSearchBarContainer">
                                 <div className="MinimalSearchBar">

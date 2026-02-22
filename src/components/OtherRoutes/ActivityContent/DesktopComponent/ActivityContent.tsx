@@ -10,6 +10,13 @@ export interface ActivityOption {
     detail: string;
     originalPrice: number;
     price: number;
+    /** Single image URL for Select Activity card (activity-card layout) */
+    image?: string;
+    category?: string;
+    rating?: number;
+    reviews?: number;
+    location?: string;
+    discount?: string;
 }
 
 export interface ActivityContentProps {
@@ -72,27 +79,45 @@ const ActivityContent = ({
                         {visibleList.map((activity) => {
                             const isAdded = addedIds.has(activity.id);
                             return (
-                                <div key={activity.id} className={`ActivityContentCard ${isAdded ? "ActivityContentCardAdded" : ""}`}>
-                                    <div className="ActivityContentCardBody">
-                                        <h3 className="ActivityContentCardTitle">{activity.title}</h3>
-                                        <p className="ActivityContentCardDetail">{activity.detail}</p>
-                                        <div className="ActivityContentCardFooter">
-                                            <div className="ActivityContentCardPrice">
-                                                <span className="ActivityContentCardOriginalPrice">₹{activity.originalPrice.toLocaleString()}</span>
-                                                <span className="ActivityContentCardCurrentPrice">₹{activity.price.toLocaleString()}</span>
+                                <div key={activity.id} className={`ActivityContentSelectCard ${isAdded ? "ActivityContentSelectCardAdded" : ""}`}>
+                                    <div className="ActivityContentSelectCardImageWrap">
+                                        <img src={activity.image ?? "https://images.unsplash.com/photo-1549221360-456a9c197d5b?q=80&w=800&auto=format&fit=crop"} alt="" />
+                                    </div>
+                                    <div className="ActivityContentSelectCardBody">
+                                        {activity.category != null && (
+                                            <span className="ActivityContentSelectCardCategory">{activity.category}</span>
+                                        )}
+                                        <h3 className="ActivityContentSelectCardTitle">{activity.title}</h3>
+                                        {activity.detail && <p className="ActivityContentSelectCardDetail">{activity.detail}</p>}
+                                        {activity.location != null && (
+                                            <div className="ActivityContentSelectCardLocation">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
+                                                {activity.location}
                                             </div>
+                                        )}
+                                        <div className="ActivityContentSelectCardPriceRow">
+                                            <div className="ActivityContentSelectCardPriceLeft">
+                                                <span className="ActivityContentSelectCardFrom">from</span>
+                                                <div className="ActivityContentSelectCardPriceWrap">
+                                                    <span className="ActivityContentSelectCardOriginalPrice">₹{activity.originalPrice.toLocaleString()}</span>
+                                                    <span className="ActivityContentSelectCardCurrentPrice">₹{activity.price.toLocaleString()}</span>
+                                                </div>
+                                            </div>
+                                            {activity.discount != null && (
+                                                <span className="ActivityContentSelectCardDiscount">{activity.discount}</span>
+                                            )}
+                                        </div>
+                                        <div className="ActivityContentSelectCardActions">
                                             <button
                                                 type="button"
-                                                className={`ActivityContentCardAddBtn ${isAdded ? "ActivityContentCardAddBtnAdded" : ""}`}
+                                                className={`ActivityContentSelectCardAddBtn ${isAdded ? "ActivityContentSelectCardAddBtnAdded" : ""}`}
                                                 onClick={() => toggleAdded(activity.id)}
                                                 aria-pressed={isAdded}
                                             >
                                                 {isAdded ? (
                                                     <>
-                                                        <span className="ActivityContentCardAddBtnIcon" aria-hidden>
-                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                                                <polyline points="20 6 9 17 4 12" />
-                                                            </svg>
+                                                        <span className="ActivityContentSelectCardAddBtnIcon" aria-hidden>
+                                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
                                                         </span>
                                                         Added
                                                     </>
@@ -100,6 +125,7 @@ const ActivityContent = ({
                                                     "Add to trip"
                                                 )}
                                             </button>
+                                            <Link href="#" className="ActivityContentSelectCardShowDetailsBtn">Show Details</Link>
                                         </div>
                                     </div>
                                 </div>

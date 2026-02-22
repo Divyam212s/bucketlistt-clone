@@ -15,7 +15,7 @@ const HeroDesktopDestinationsCards = () => {
             <div id="HeroDestinationsCards" className="MaxWidthComponent MarginAuto PaddingTop50">
 
                 <div className='SecondaryHeadingFont'>
-                    Explore India's top destinations
+                Explore India’s Best Adventure Sports Destinations
                 </div>
                 <Swiper
                     modules={[Autoplay, Pagination]}

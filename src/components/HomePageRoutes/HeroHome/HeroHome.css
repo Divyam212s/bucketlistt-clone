@@ -65,12 +65,10 @@
 
 #desktop-component .DesktopContentContainer {
     height: 100%;
-    /* background-color: red; */
     display: flex;
     flex-direction: column;
     justify-content: end;
 }
-
 
 #desktop-component .DesktopSearchBarContainer {
     margin-top: 20px;
