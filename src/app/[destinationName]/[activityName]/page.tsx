@@ -45,6 +45,7 @@ export default async function ActivityDetailPage({ params }: Props) {
                     "https://images.unsplash.com/photo-1549221360-456a9c197d5b?q=80&w=2074&auto=format&fit=crop",
                     "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=400&auto=format&fit=crop",
                     "https://images.unsplash.com/photo-1542718610-a1d656d1884c?w=400&auto=format&fit=crop",
+                    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&auto=format&fit=crop",
                 ]}
             />
             <ActivityDetailContent sidebarButtonLabel="Book this activity" />

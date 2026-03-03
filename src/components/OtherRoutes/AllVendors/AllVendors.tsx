@@ -15,7 +15,6 @@ export default function AllVendors() {
                         imageUrl={card.imageUrl}
                         title={card.title}
                         description={card.description}
-                        price={card.price}
                         href={card.href}
                     />
                 ))}
