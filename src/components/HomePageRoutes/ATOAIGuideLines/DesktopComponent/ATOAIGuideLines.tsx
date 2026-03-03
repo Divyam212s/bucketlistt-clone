@@ -9,7 +9,7 @@ const ATOAIGuideLines = () => {
                     <h2 className="SecondaryHeadingFont text-center">{ATOAIContent.heading}</h2>
 
                     <div className="ATOAILogoContainer">
-                        <img src={ATOAIContent.logo} alt="ATOAI Allied Member Logo" className="ATOAILogo" />
+                        <img src={ATOAIContent.logo} alt="ATOAI guidelines - Allied member logo" className="ATOAILogo" />
                     </div>
 
                     <p className="ATOAIDescription text-center">
@@ -29,7 +29,7 @@ const ATOAIGuideLines = () => {
                             </div>
                         </div>
                         <div className="IndiaFlagContainer">
-                            <img src={ATOAIContent.indiaFlag} alt="India Flag" className="IndiaFlag" />
+                            <img src={ATOAIContent.indiaFlag} alt="ATOAI guidelines - India flag" className="IndiaFlag" />
                         </div>
                     </div>
                 </div>

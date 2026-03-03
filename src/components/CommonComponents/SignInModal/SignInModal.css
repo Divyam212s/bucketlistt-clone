@@ -13,7 +13,7 @@
 
 .SignInModal-inner {
     position: relative;
-    padding: 28px 32px 24px;
+    /* padding: 28px 32px 24px; */
 }
 
 .SignInModal-close {
@@ -230,6 +230,14 @@
     text-decoration: underline;
 }
 
+.SignInModal-error {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    font-size: 0.8rem;
+    color: #c53030;
+    line-height: 1.35;
+}
+
 .SignInModal-submit {
     margin-top: 4px;
     height: 48px;
@@ -258,4 +266,51 @@
 
 .SignInModal-footer .SignInModal-link {
     font-weight: 500;
+}
+
+.SignInModal-hint {
+    margin: 0 0 4px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.SignInModal-input-readonly {
+    background: #f9f9f9 !important;
+    cursor: default;
+}
+
+.SignInModal-resend {
+    margin: 8px 0 4px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.SignInModal-link-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    color: var(--brand-color, #eb493a);
+}
+
+.SignInModal-link-btn:hover {
+    text-decoration: underline;
+}
+
+.SignInModal-change-phone {
+    display: block;
+    margin-top: 12px;
+    width: 100%;
+    text-align: center;
+}
+
+.SignInModal-submit-signup {
+    background: #333 !important;
+    border-color: #333 !important;
+}
+
+.SignInModal-submit-signup:hover {
+    background: #555 !important;
+    border-color: #555 !important;
 }

@@ -70,6 +70,16 @@ const ActivityContent = ({
         });
     };
 
+    /** SEO-friendly slug: "Rishikesh" → "rishikesh", "Valley Rope Jump" → "valley-rope-jump" */
+    const toSlug = (s: string) =>
+        s
+            .toLowerCase()
+            .trim()
+            .replace(/[/()]/g, "")
+            .replace(/\s+/g, "-")
+            .replace(/-+/g, "-")
+            .replace(/^-|-$/g, "");
+
     return (
         <section className="ActivityContent MaxWidthComponent MarginAuto PaddingTop30 PaddingBottom50">
             <div className="ActivityContentLeft">
@@ -81,7 +91,7 @@ const ActivityContent = ({
                             return (
                                 <div key={activity.id} className={`ActivityContentSelectCard ${isAdded ? "ActivityContentSelectCardAdded" : ""}`}>
                                     <div className="ActivityContentSelectCardImageWrap">
-                                        <img src={activity.image ?? "https://images.unsplash.com/photo-1549221360-456a9c197d5b?q=80&w=800&auto=format&fit=crop"} alt="" />
+                                        <img src={activity.image ?? "https://images.unsplash.com/photo-1549221360-456a9c197d5b?q=80&w=800&auto=format&fit=crop"} alt={`Select activity - ${activity.title} in ${activity.location ?? "destination"}`} />
                                     </div>
                                     <div className="ActivityContentSelectCardBody">
                                         {activity.category != null && (
@@ -125,7 +135,12 @@ const ActivityContent = ({
                                                     "Add to trip"
                                                 )}
                                             </button>
-                                            <Link href="#" className="ActivityContentSelectCardShowDetailsBtn">Show Details</Link>
+                                            <Link
+                                                href={`/${toSlug(activity.location ?? "rishikesh")}/${toSlug(activity.title)}`}
+                                                className="ActivityContentSelectCardShowDetailsBtn"
+                                            >
+                                                Show Details
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>

@@ -95,7 +95,7 @@ const Footer = () => {
                     {/* Brand Section */}
                     <div className="FooterBrandCol">
                         <div className="FooterLogoContainer">
-                            <img src={footerContent.brand.logo} alt="Bucketlistt Logo" className="FooterLogo" />
+                            <img src={footerContent.brand.logo} alt="Bucketlistt - Adventure experiences and activities" className="FooterLogo" />
                         </div>
                         <p className="FooterBrandDesc">{footerContent.brand.description}</p>
                         <p className="FooterBrandSlogan">"{footerContent.brand.slogan}"</p>

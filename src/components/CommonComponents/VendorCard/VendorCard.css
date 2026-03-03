@@ -1,0 +1,146 @@
+/* VendorCard – image-full card with bottom gradient and CTA */
+
+.VendorCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1200px) {
+  .VendorCardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .VendorCardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .VendorCardsGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.VendorCard {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  height: 100%;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+}
+
+.VendorCard:hover {
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.14);
+  transform: translateY(-4px);
+}
+
+.VendorCardImageWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.VendorCardImageWrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.VendorCard:hover .VendorCardImageWrap img {
+  transform: scale(1.05);
+}
+
+/* Bottom-to-top gradient overlay – ~60% height from bottom for text contrast */
+.VendorCardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.5) 35%,
+      rgba(0, 0, 0, 0.2) 55%,
+      transparent 100%);
+  pointer-events: none;
+}
+
+.VendorCardPrice {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.VendorCardContent {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding: 16px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.VendorCardTitle {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.VendorCardDescription {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.VendorCardBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  align-self: flex-start;
+  margin-top: 2px;
+  padding: 8px 14px;
+  background: #fff;
+  color: #1a1a1a;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.VendorCardBtn:hover {
+  background: #f5f5f5;
+  transform: translateX(2px);
+}
+
+.VendorCardBtn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}

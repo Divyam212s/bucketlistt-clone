@@ -51,22 +51,24 @@
 
 .NavContainer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 
-/* Navigation Sections */
+/* Logo left; search fills center and is centered; actions right */
 .NavLeft {
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
 }
 
 .NavSearch {
-    flex: 2;
+    flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-width: 0;
+    padding: 0 16px;
 }
 
 /* Search Suggestions Dropdown */
@@ -130,7 +132,7 @@
 }
 
 .NavRight {
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -170,6 +172,13 @@
 .ActivityIconBox svg {
     width: 24px;
     height: 24px;
+}
+
+.ActivityIconBox .ActivityIconImg,
+.ActivityIconBox img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
 }
 
 .ActivityLabel {
@@ -270,6 +279,350 @@
 .LoginBtn:hover {
     background-color: var(--brand-color);
     box-shadow: 0 5px 15px rgba(235, 73, 58, 0.2);
+}
+
+/* Profile dropdown */
+.NavProfileWrap {
+    position: relative;
+}
+
+.NavProfileBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px 6px 8px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.NavProfileBtn:hover {
+    background: rgb(248 249 250);
+    border-color: rgba(0, 0, 0, 0.18);
+}
+
+.NavProfileBtn[aria-expanded="true"] {
+    border-color: var(--brand-color);
+    box-shadow: 0 0 0 1px var(--brand-color);
+}
+
+.NavProfileAvatar {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--brand-color);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 50%;
+}
+
+.NavProfileChevron {
+    font-size: 10px;
+    color: #666;
+}
+
+.NavProfileDropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 260px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.NavProfileUserInfo {
+    padding: 14px 16px;
+    background: linear-gradient(180deg, rgb(250 250 250) 0%, #fff 100%);
+}
+
+.NavProfileUserLabel {
+    font-size: 11px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+}
+
+.NavProfileUserEmail {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    word-break: break-all;
+}
+
+.NavProfileUserRole {
+    font-size: 12px;
+    color: #666;
+    margin-top: 2px;
+}
+
+.NavProfileDivider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.NavProfileMenu {
+    padding: 6px 0;
+}
+
+.NavProfileItem {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s;
+}
+
+.NavProfileItem:hover {
+    background: rgba(235, 73, 58, 0.08);
+    color: var(--brand-color);
+}
+
+.NavProfileItemHighlight {
+    font-weight: 600;
+    color: var(--brand-color);
+}
+
+.NavProfileItemLogout {
+    color: #c53030;
+    font-weight: 500;
+}
+
+.NavProfileItemLogout:hover {
+    background: rgba(197, 48, 48, 0.08);
+    color: #b91c1c;
+}
+
+/* Full-screen logout loader */
+.NavLogoutOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(4px);
+}
+
+.NavLogoutLoader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.NavLogoutSpinner {
+    width: 44px;
+    height: 44px;
+    border: 3px solid rgba(0, 0, 0, 0.08);
+    border-top-color: var(--brand-color);
+    border-radius: 50%;
+    animation: NavLogoutSpin 0.8s linear infinite;
+}
+
+.NavLogoutText {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+@keyframes NavLogoutSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Profile modal – Update Personal Information (MUI, compact, current theme) */
+.NavProfileModalWrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 10000;
+}
+
+.NavProfileModal {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    outline: none;
+    z-index: 55;
+}
+
+.NavProfileModalLoader {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 12px;
+}
+
+.NavProfileModalLoaderText {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.NavProfileModalHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 18px 0;
+}
+
+.NavProfileModalTitle {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--heading-color, #222);
+}
+
+.NavProfileModalClose {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #666;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+.NavProfileModalClose:hover {
+    background: rgba(0, 0, 0, 0.06);
+    color: #222;
+}
+
+.NavProfileModalClose svg {
+    width: 18px;
+    height: 18px;
+}
+
+.NavProfileModalForm {
+    padding: 16px 18px 20px;
+}
+
+.NavProfileModalRow {
+    margin-bottom: 14px;
+}
+
+.NavProfileModalRowHalf {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.NavProfileModalField {
+    margin-bottom: 14px;
+}
+
+.NavProfileModalRowHalf .NavProfileModalField {
+    margin-bottom: 0;
+}
+
+.NavProfileModalLabel {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--heading-color, #222);
+    margin-bottom: 5px;
+}
+
+.NavProfileModalInput {
+    width: 100%;
+    padding: 9px 11px;
+    font-size: 14px;
+    color: var(--heading-color, #222);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.NavProfileModalInput:focus {
+    outline: none;
+    border-color: var(--brand-color, #eb493a);
+}
+
+.NavProfileModalHelper {
+    display: block;
+    font-size: 11px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.NavProfileModalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 12px;
+    margin-top: 4px;
+}
+
+.NavProfileModalBtn {
+    padding: 9px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.NavProfileModalBtnCancel {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: var(--heading-color, #222);
+}
+
+.NavProfileModalBtnCancel:hover {
+    background: rgb(248 249 250);
+    border-color: rgba(0, 0, 0, 0.25);
+}
+
+.NavProfileModalBtnPrimary {
+    background: #1a202c;
+    border: none;
+    color: #fff;
+}
+
+.NavProfileModalBtnPrimary:hover {
+    background: #2d3748;
 }
 
 /* Dark mode overrides if needed, but sticky white was requested */

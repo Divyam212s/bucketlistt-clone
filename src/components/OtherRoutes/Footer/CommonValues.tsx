@@ -1,6 +1,6 @@
 export const footerContent = {
     brand: {
-        logo: "/Images/BucketlisttFooterLogo.png",
+        logo: "/Images/BucketlisttLogos/bucketlistt_White.png",
         description: "Your ultimate adventure partner. We curate the best experiences from certified operators to make your bucket list dreams a reality.",
         slogan: "Collect Moments, Not Things."
     },
@@ -9,7 +9,7 @@ export const footerContent = {
             title: "Quick Links",
             links: [
                 { label: "Home", href: "/" },
-                { label: "Destinations", href: "/destination" },
+                { label: "Destinations", href: "/all-destination" },
                 { label: "Experiences", href: "/experiences" },
                 { label: "Best Sellers", href: "/best-sellers" }
             ]

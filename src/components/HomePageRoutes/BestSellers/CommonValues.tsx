@@ -1,3 +1,13 @@
+/** Vendor names and their activity types – for display/filtering */
+export const VENDORS = {
+    "Himalaya Bungee": "Bungee jumping",
+    "River and Rocks": "River rafting",
+    "Why No Fly": "Paragliding",
+    "Zipliner": "Zip lining",
+    "Jumping Heights": "Bungee, Flying Fox",
+    "Thrill Factory": "Bungee (different types)",
+} as const;
+
 export const bestSellerActivities = [
     {
         id: 1,
@@ -14,6 +24,7 @@ export const bestSellerActivities = [
         price: 3330,
         discount: "10% off",
         location: "Rishikesh",
+        vendor: "Jumping Heights",
     },
     {
         id: 2,
@@ -30,6 +41,7 @@ export const bestSellerActivities = [
         price: 3600,
         discount: "10% off",
         location: "Rishikesh",
+        vendor: "Himalaya Bungee",
     },
     {
         id: 3,
@@ -46,6 +58,7 @@ export const bestSellerActivities = [
         price: 3600,
         discount: "10% off",
         location: "Goa",
+        vendor: "Himalaya Bungee",
     },
     {
         id: 4,
@@ -62,6 +75,7 @@ export const bestSellerActivities = [
         price: 1350,
         discount: "10% off",
         location: "Mandvi",
+        vendor: "Thrill Factory",
     },
     {
         id: 5,
@@ -78,5 +92,6 @@ export const bestSellerActivities = [
         price: 1350,
         discount: "10% off",
         location: "Mandvi",
+        vendor: "Thrill Factory",
     },
 ];

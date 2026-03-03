@@ -36,7 +36,7 @@ const CTA = () => {
                                 <div className="CTAPhoneScreen">
                                     <img
                                         src={src}
-                                        alt={`App screen ${i + 1}`}
+                                        alt={`Bucketlistt app - CTA section screen preview ${i + 1}`}
                                         loading="lazy"
                                     />
                                 </div>

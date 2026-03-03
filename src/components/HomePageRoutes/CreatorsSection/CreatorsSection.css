@@ -1,0 +1,324 @@
+/* Creators Section – gradient hero, left heading + illustration, right content + creator circles */
+
+.CreatorsSection {
+  width: 100%;
+  padding: 60px 0 80px;
+  background: linear-gradient(135deg, rgba(255, 240, 245, 0.9) 0%, rgba(248, 245, 255, 0.95) 50%, rgba(255, 250, 252, 1) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.CreatorsSectionInner {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 48px;
+  align-items: center;
+  min-height: 420px;
+}
+
+@media (max-width: 1024px) {
+  .CreatorsSectionInner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .CreatorsSectionRight {
+    order: -1;
+  }
+
+  .CreatorsSectionAvatars {
+    justify-content: center;
+  }
+
+  .CreatorsSectionActions {
+    justify-content: center;
+  }
+}
+
+/* Left column */
+.CreatorsSectionLeft {
+  position: relative;
+}
+
+.CreatorsSectionHeading {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin: 0 0 32px 0;
+  max-width: 14ch;
+  letter-spacing: -0.02em;
+}
+
+/* Illustration area with floating elements */
+.CreatorsSectionIllustrationWrap {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+}
+
+.CreatorsSectionFloat {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(240, 238, 255, 0.6));
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  animation: CreatorsFloat 6s ease-in-out infinite;
+}
+
+.CreatorsSectionFloat1 {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.CreatorsSectionFloat2 {
+  bottom: 25%;
+  left: 35%;
+  width: 44px;
+  height: 44px;
+  animation-delay: -2s;
+}
+
+@keyframes CreatorsFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.05);
+  }
+}
+
+.CreatorsSectionCircle {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: CreatorsFloat 5s ease-in-out infinite;
+  animation-delay: -1s;
+}
+
+.CreatorsSectionCirclePlay {
+  font-size: 11px;
+  color: var(--brand-color, #eb493a);
+}
+
+.CreatorsSectionCircleText {
+  font-size: 5.5px;
+  font-weight: 700;
+  color: #666;
+  letter-spacing: 0.02em;
+  max-width: 52px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.CreatorsSectionCurve {
+  position: absolute;
+  top: 8%;
+  right: 28%;
+  color: rgba(0, 0, 0, 0.15);
+  animation: CreatorsFloat 4s ease-in-out infinite;
+  animation-delay: -0.5s;
+}
+
+.CreatorsSectionCurve svg {
+  width: 50px;
+  height: 28px;
+}
+
+.CreatorsSectionPointer {
+  position: absolute;
+  right: -4px;
+  bottom: -2px;
+  font-size: 14px;
+}
+
+.CreatorsSectionIllustrationBlock {
+  /* position: absolute; */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.CreatorsSectionIllustrationImg {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  /* box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); */
+  object-fit: contain;
+  display: block;
+}
+
+.CreatorsSectionBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.CreatorsSectionBadgeCaption {
+  font-size: 12px;
+  font-weight: 600;
+  color: #444;
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Right column */
+.CreatorsSectionRight {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.CreatorsSectionImageCluster {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  margin-bottom: 4px;
+}
+
+.CreatorsSectionImageCard {
+  width: 80px;
+  height: 56px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.CreatorsSectionImageCard:hover {
+  transform: translateY(-2px);
+}
+
+.CreatorsSectionImageCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.CreatorsSectionImageCard:nth-child(2) {
+  width: 100px;
+  height: 64px;
+}
+
+.CreatorsSectionImageCard:nth-child(3) {
+  width: 88px;
+  height: 58px;
+}
+
+.CreatorsSectionRightCaption {
+  font-size: 14px;
+  font-weight: 600;
+  color: #8b6914;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.CreatorsSectionCreatorsRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.CreatorsSectionAvatars {
+  display: flex;
+  align-items: center;
+}
+
+.CreatorsSectionAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+.CreatorsSectionAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.CreatorsSectionCountBadge {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: #1a1a1a;
+  padding: 6px 12px;
+  border-radius: 100px;
+  min-width: 48px;
+  text-align: center;
+}
+
+.CreatorsSectionBody {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+  max-width: 42ch;
+}
+
+.CreatorsSectionActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.CreatorsSectionPrimaryBtn {
+  padding: 14px 28px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: #1a1a1a;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.CreatorsSectionPrimaryBtn:hover {
+  background: #333;
+  transform: translateY(-1px);
+}
+
+.CreatorsSectionSecondaryBtn {
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  background: none;
+  border: none;
+  border-bottom: 2px solid currentColor;
+  cursor: pointer;
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.CreatorsSectionSecondaryBtn:hover {
+  color: var(--brand-color, #eb493a);
+  opacity: 0.9;
+}

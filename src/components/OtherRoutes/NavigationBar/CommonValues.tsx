@@ -9,11 +9,11 @@ export const navContent = {
         "Find the perfect getaway..."
     ],
     activities: [
-        { name: "Bungee", icon: "bungee" },
-        { name: "Rafting", icon: "rafting" },
-        { name: "Paragliding", icon: "paragliding" },
-        { name: "Hot air ballon", icon: "balloon" },
-        { name: "Zip lining", icon: "zipline" }
+        { name: "Bungee", icon: "/Images/Icons/BUNGEE.png" },
+        { name: "Rafting", icon: "/Images/Icons/RAFTING.png" },
+        { name: "Paragliding", icon: "/Images/Icons/PARAGLIDING.png" },
+        { name: "Hot air ballon", icon: "/Images/Icons/HOT AIR BALLOoN.png" },
+        { name: "Zip lining", icon: "/Images/Icons/ZIP LINING.png" }
     ],
     destinations: ["Bali, Indonesia", "Paris, France", "Santorini, Greece", "Tokyo, Japan", "Swiss Alps", "Amritsar, Punjab", "Rishikesh, Uttarakhand", "Manali, Himachal", "Leh Ladakh", "Goa Beaches"]
 };

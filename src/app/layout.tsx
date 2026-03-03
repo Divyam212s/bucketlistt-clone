@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
+import StoreProvider from "@/store/Provider";
 import "./globals.css";
 import "./mediaQueriesCss.css"
 
@@ -12,6 +13,9 @@ const beVietnamPro = Be_Vietnam_Pro({
 export const metadata: Metadata = {
   title: "Bucketlistt | curated Adventures",
   description: "Experience the world through curated bucket-list adventures designed for the discerning traveler.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -24,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${beVietnamPro.variable} font-sans antialiased`}
       >
-        {children}
+        <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );

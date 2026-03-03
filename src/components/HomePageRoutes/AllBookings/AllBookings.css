@@ -1,0 +1,535 @@
+/* AllBookings – dynamic table, horizontal scroll */
+
+.AllBookings {
+  width: 100%;
+}
+
+.AllBookingsHeader {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.AllBookingsHeaderLeft {
+  flex: 1;
+  min-width: 0;
+}
+
+.AllBookingsHeaderRight {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.AllBookingsHeaderBtn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  border: 1px solid transparent;
+}
+
+.AllBookingsHeaderBtnSecondary {
+  color: var(--heading-color);
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.AllBookingsHeaderBtnSecondary:hover {
+  background: rgb(248 249 250);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.AllBookingsHeaderBtnPrimary {
+  color: #fff;
+  background: var(--brand-color, #eb493a);
+  border-color: var(--brand-color, #eb493a);
+}
+
+.AllBookingsHeaderBtnPrimary:hover {
+  opacity: 0.92;
+  background: var(--brand-color, #eb493a);
+  border-color: var(--brand-color, #eb493a);
+}
+
+.AllBookingsTitle {
+  color: var(--heading-color);
+  margin: 0 0 6px 0;
+  font-weight: 600;
+}
+
+.AllBookingsSubtitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.AllBookingsFilterBtn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--heading-color);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.AllBookingsFilterBtn:hover {
+  background: rgb(248 249 250);
+  border-color: var(--brand-color);
+}
+
+.AllBookingsFilterBtnActive {
+  border-color: var(--brand-color);
+  color: var(--brand-color);
+  background: rgba(235, 73, 58, 0.06);
+}
+
+/* Top filters bar */
+.AllBookingsFiltersBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  background: rgb(248 249 250);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--borderRadius);
+  position: relative;
+}
+
+.AllBookingsTopFilterBtn {
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--heading-color);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.AllBookingsTopFilterBtn:hover {
+  background: rgb(240 240 240);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.AllBookingsTopFilterBtnActive {
+  border-color: var(--brand-color);
+  color: var(--brand-color);
+  background: rgba(235, 73, 58, 0.08);
+}
+
+.AllBookingsTopFilterBtnOpen {
+  border-color: var(--brand-color);
+  background: rgba(235, 73, 58, 0.06);
+}
+
+.AllBookingsTopFilterWrap {
+  position: relative;
+}
+
+.AllBookingsTopFilterDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  min-width: 200px;
+  max-height: 280px;
+  overflow-y: auto;
+  padding: 8px 10px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--borderRadius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+}
+
+.AllBookingsTopFilterCheck {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  font-size: 13px;
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.AllBookingsTopFilterCheck:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.AllBookingsTopFilterCheck input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--brand-color);
+}
+
+/* Date range – compact, professional */
+.AllBookingsDateRangeWrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  padding: 4px 12px 4px 10px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.AllBookingsDateRangeLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.AllBookingsDateRangeInputs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.AllBookingsDateRangeInput {
+  width: 130px;
+  padding: 6px 10px 6px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--heading-color);
+  background: rgb(250 250 250);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  font-family: inherit;
+}
+
+.AllBookingsDateRangeInput:hover {
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.AllBookingsDateRangeInput:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--brand-color);
+  box-shadow: 0 0 0 2px rgba(235, 73, 58, 0.12);
+}
+
+.AllBookingsDateRangeInput::-webkit-calendar-picker-indicator {
+  opacity: 0.6;
+  cursor: pointer;
+  margin-left: 2px;
+}
+
+.AllBookingsDateRangeSep {
+  font-size: 12px;
+  color: #999;
+  font-weight: 500;
+  user-select: none;
+}
+
+.AllBookingsTableWrap {
+  overflow-x: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--borderRadiusLarge);
+  background: #fff;
+}
+
+.AllBookingsTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed;
+}
+
+.AllBookingsTh,
+.AllBookingsTd {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+
+.AllBookingsTh {
+  font-weight: 600;
+  color: var(--heading-color);
+  background: rgb(248 249 250);
+  position: sticky;
+  top: 0;
+  cursor: grab;
+  user-select: none;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.AllBookingsTh:active {
+  cursor: grabbing;
+}
+
+.AllBookingsThDragging {
+  opacity: 0.6;
+  background: rgb(230 230 230);
+}
+
+.AllBookingsThDragOver {
+  background: rgba(235, 73, 58, 0.15);
+  box-shadow: inset 0 0 0 2px var(--brand-color);
+}
+
+.AllBookingsTh {
+  position: relative;
+}
+
+.AllBookingsThContent {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.AllBookingsResizeHandle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6px;
+  height: 100%;
+  cursor: col-resize;
+  background: transparent;
+}
+
+.AllBookingsResizeHandle:hover,
+.AllBookingsResizeHandle:active {
+  background: var(--brand-color);
+  opacity: 0.3;
+}
+
+.AllBookingsThGrip {
+  font-size: 12px;
+  color: #888;
+  letter-spacing: -2px;
+  cursor: grab;
+}
+
+.AllBookingsThMenuWrap {
+  position: absolute;
+  top: 0;
+  right: 6px;
+  bottom: 0;
+  display: inline-flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.AllBookingsThSortFilterTrigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 4px;
+  font-size: 11px;
+  color: #666;
+  background: rgba(0, 0, 0, 0.06);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.AllBookingsThSortFilterTrigger:hover {
+  background: rgba(235, 73, 58, 0.15);
+  color: var(--brand-color);
+}
+
+.AllBookingsThSorted .AllBookingsThSortFilterTrigger {
+  color: var(--brand-color);
+  font-weight: 600;
+}
+
+.AllBookingsColumnMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  min-width: 200px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--borderRadius);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+  font-size: 13px;
+}
+
+.AllBookingsColumnMenuPortal {
+  position: fixed;
+  top: auto;
+  right: auto;
+  margin-top: 0;
+  z-index: 9999;
+}
+
+.AllBookingsColumnMenuSection {
+  margin-bottom: 10px;
+}
+
+.AllBookingsColumnMenuSection:last-child {
+  margin-bottom: 0;
+}
+
+.AllBookingsColumnMenuLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+
+.AllBookingsColumnMenuSection button {
+  display: block;
+  width: 100%;
+  padding: 6px 10px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--heading-color);
+  transition: background 0.15s;
+}
+
+.AllBookingsColumnMenuSection button:hover {
+  background: rgba(235, 73, 58, 0.1);
+  color: var(--brand-color);
+}
+
+.AllBookingsColumnMenuSection button:last-child {
+  margin-bottom: 0;
+}
+
+.AllBookingsColumnMenuInput {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 6px;
+  box-sizing: border-box;
+}
+
+.AllBookingsColumnMenuInput:focus {
+  outline: none;
+  border-color: var(--brand-color);
+}
+
+.AllBookingsTr:hover .AllBookingsTd {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.AllBookingsTd {
+  color: var(--text-color);
+}
+
+.AllBookingsThActions,
+.AllBookingsTdActions {
+  white-space: nowrap;
+  position: sticky;
+  right: 0;
+  box-shadow: -2px 0 4px rgba(0, 0, 0, 0.04);
+}
+
+.AllBookingsThActions {
+  background: rgb(248 249 250);
+}
+
+.AllBookingsTdActions {
+  background: white !important;
+}
+
+.AllBookingsTr:hover .AllBookingsTdActions {
+  background: rgb(250 250 250);
+}
+
+.AllBookingsActionBtn {
+  padding: 6px 10px;
+  margin-right: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--brand-color);
+  background: #fff;
+  border: 1px solid var(--brand-color);
+  border-radius: var(--borderRadius);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.AllBookingsActionBtn:hover {
+  background: var(--brand-color);
+  color: #fff;
+}
+
+.AllBookingsActionBtn:last-child {
+  margin-right: 0;
+}
+
+.AllBookingsActionsCell {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.AllBookingsActionsPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.AllBookingsActionsHoverShow {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--heading-color);
+  background: rgb(248 249 250);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1;
+}
+
+.AllBookingsActionsCell:hover .AllBookingsActionsHoverShow {
+  opacity: 1;
+}

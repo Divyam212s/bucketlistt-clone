@@ -13,9 +13,9 @@ export const CTAAppStoreUrl = "#";
 
 /* Distinct images per phone: replace with real app screenshots when ready */
 export const CTAPhoneScreens = [
-  "https://images.unsplash.com/photo-1627118841439-bd069ff0af74?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", /* travel / gift */
-  "https://images.unsplash.com/photo-1641735734946-8ddfede87bf7?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", /* hotel */
-  "https://images.unsplash.com/photo-1627118841439-bd069ff0af74?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", /* adventure welcome */
-  "https://images.unsplash.com/photo-1641735734946-8ddfede87bf7?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", /* flight / trip */
-  "https://images.unsplash.com/photo-1627118841439-bd069ff0af74?q=80&w=1480&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", /* shop / explore */
+  "/Images/FooterGridImages/skydiving.png", /* travel / gift */
+  "/Images/FooterGridImages/Bungee.png", /* hotel */
+  "/Images/FooterGridImages/RiverRafting.png", /* adventure welcome */
+  "/Images/FooterGridImages/ZipLining.png", /* flight / trip */
+  "/Images/FooterGridImages/paragliding.png", /* shop / explore */
 ];

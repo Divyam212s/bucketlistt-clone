@@ -39,7 +39,7 @@ const DestinationLocation = () => {
                         <div className="HeroImageWrapper">
                             <img
                                 src="https://images.unsplash.com/photo-1653768640822-4b1bdf329a29?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                alt="Things to do in Rishikesh"
+                                alt="Destination location - Things to do in Rishikesh"
 
                             />
                         </div>

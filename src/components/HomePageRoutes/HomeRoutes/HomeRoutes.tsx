@@ -4,6 +4,7 @@ import BestSellersDesktop from "../BestSellers/DesktopComponent/BestSellersDeskt
 import HomeReviewDesktop from "../HomeReview/DesktopComponent/HomeReviewDesktop";
 import HomeWhyChooseBucketlistt from "../HomeWhyChoose/DesktopComponent/HomeWhyChooseBucketlistt";
 import WhoWeAreDesktopComponent from "../WhoWeAre/DesktopComponent/WhoWeAre";
+import CreatorsSection from "../CreatorsSection/CreatorsSection";
 import ATOAIGuideLines from "../ATOAIGuideLines/DesktopComponent/ATOAIGuideLines";
 import CTA from "../CTAComponent/DesktopComponent/CTA";
 const HomeRoutes = () => {
@@ -15,6 +16,7 @@ const HomeRoutes = () => {
             <WhoWeAreDesktopComponent />
             <HomeReviewDesktop />
             <HomeWhyChooseBucketlistt />
+            <CreatorsSection />
             <ATOAIGuideLines />
             <CTA />
         </div>

@@ -1,0 +1,862 @@
+/* Create Offline Booking form – compact, professional, brand color */
+
+.OfflineBookingForm {
+  width: 100%;
+}
+
+.OfflineBookingFormHeader {
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.OfflineBookingFormTitle {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  text-align: left;
+}
+
+.OfflineBookingFormGrid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .OfflineBookingFormGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Multi-activity layout: cards grid + summary */
+.OfflineBookingFormMultiGrid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 1024px) {
+  .OfflineBookingFormMultiGrid {
+    grid-template-columns: 1fr;
+  }
+}
+.OfflineBookingFormCardsWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.OfflineBookingActivityCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (max-width: 900px) {
+  .OfflineBookingActivityCardsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+.OfflineBookingActivityCard {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+.OfflineBookingActivityCardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.OfflineBookingActivityCardBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--heading-color);
+}
+.OfflineBookingActivityCardRemove {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #888;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.OfflineBookingActivityCardRemove:hover {
+  background: rgba(235, 73, 58, 0.1);
+  color: var(--brand-color, #eb493a);
+}
+/* Top row: small image left (full height), Select experience + Select activity right */
+.OfflineBookingActivityCardTop {
+  display: flex;
+  align-items: stretch;
+  gap: 14px;
+  padding: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.OfflineBookingActivityCardThumb {
+  flex-shrink: 0;
+  width: 120px;
+  min-height: 80px;
+  overflow: hidden;
+  background: #f0f0f0;
+  border-radius: 8px;
+  align-self: stretch;
+  display: flex;
+}
+.OfflineBookingActivityCardThumb img {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+  flex: 1;
+}
+.OfflineBookingActivityCardTopFields {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.OfflineBookingActivityCardBody {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.OfflineBookingSameAsFirst {
+  align-self: flex-start;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--brand-color, #eb493a);
+  background: rgba(235, 73, 58, 0.08);
+  border: 1px solid rgba(235, 73, 58, 0.25);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.OfflineBookingSameAsFirst:hover {
+  background: rgba(235, 73, 58, 0.15);
+}
+
+/* New field set: section headings, customer card, read-only amount */
+.OfflineBookingFormSectionHeading {
+  margin: 0 0 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--heading-color);
+  text-transform: uppercase;
+}
+.OfflineBookingFormSectionHeadingRight {
+  text-align: right;
+}
+.OfflineBookingFormCustomerCard {
+  padding: 12px 14px;
+  background: #f8f9fa;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.OfflineBookingFormRowSection {
+  align-items: flex-end;
+}
+.OfflineBookingFormAmountReadonly {
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--heading-color);
+  background: #f0f0f0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+}
+.OfflineBookingFormAmountInput {
+  min-height: 38px;
+}
+
+.OfflineBookingPriceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 6px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+.OfflineBookingPriceValue {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+.OfflineBookingAddAnother {
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--brand-color, #eb493a);
+  background: #fff;
+  border: 1px dashed rgba(235, 73, 58, 0.5);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.OfflineBookingAddAnother:hover {
+  background: rgba(235, 73, 58, 0.06);
+  border-color: var(--brand-color, #eb493a);
+}
+
+.OfflineBookingFormMain {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Card container for each section – separation of fields */
+.OfflineBookingFormCard {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.OfflineBookingFormCardTitle {
+  margin: 0 0 12px;
+  padding: 0 0 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--heading-color);
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.OfflineBookingFormSection {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.OfflineBookingFormSectionCompact {
+  gap: 6px;
+}
+
+/* Two columns per row with consistent gap */
+.OfflineBookingFormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.OfflineBookingFormField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.OfflineBookingFormFieldFull {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 600px) {
+  .OfflineBookingFormRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.OfflineBookingFormSectionDisabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.OfflineBookingFormSectionDisabled .OfflineBookingFormSlotBtn {
+  cursor: not-allowed;
+}
+
+.OfflineBookingFormSectionTitle {
+  margin: 0 0 2px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--heading-color);
+  text-align: left;
+}
+
+.OfflineBookingFormLabelBlock {
+  margin-bottom: 6px;
+}
+
+/* Date pills + More dates (cart-style) – no gap between pills and More dates */
+.OfflineBookingFormDateRow {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.OfflineBookingFormDateRowDisabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.OfflineBookingFormDateRowDisabled .OfflineBookingFormDatePill,
+.OfflineBookingFormDateRowDisabled .OfflineBookingFormMoreDates {
+  cursor: not-allowed;
+}
+
+.OfflineBookingFormDatePills {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.OfflineBookingFormDatePills::-webkit-scrollbar {
+  height: 4px;
+}
+
+.OfflineBookingFormDatePills::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 4px;
+}
+
+.OfflineBookingFormDatePill {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  min-width: 64px;
+  min-height: 52px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.OfflineBookingFormDatePill:hover:not(:disabled) {
+  border-color: var(--brand-color, #eb493a);
+  background: rgba(235, 73, 58, 0.04);
+}
+
+.OfflineBookingFormDatePillSelected {
+  background: rgba(235, 73, 58, 0.1);
+  border-color: var(--brand-color, #eb493a);
+  box-shadow: 0 0 0 2px rgba(235, 73, 58, 0.2);
+}
+
+.OfflineBookingFormDatePillDay {
+  font-size: 10px;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+.OfflineBookingFormDatePillSelected .OfflineBookingFormDatePillDay {
+  color: var(--brand-color, #eb493a);
+}
+
+.OfflineBookingFormDatePillDate {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 4px;
+}
+
+.OfflineBookingFormDatePillSelected .OfflineBookingFormDatePillDate {
+  color: var(--brand-color, #eb493a);
+}
+
+.OfflineBookingFormMoreDates {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 12px;
+  min-height: 52px;
+  min-width: 64px;
+  background: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-color);
+  transition: background 0.2s, border-color 0.2s;
+  font-family: inherit;
+}
+
+.OfflineBookingFormMoreDates:hover:not(:disabled) {
+  background: #eee;
+  border-color: var(--brand-color, #eb493a);
+  color: var(--brand-color, #eb493a);
+}
+
+.OfflineBookingFormMoreDates svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Calendar modal */
+.OfflineBookingFormCalendarModalWrap .ant-modal-body {
+  padding: 16px 24px 24px;
+}
+
+.OfflineBookingFormCalendarModal {
+  position: relative;
+  width: 100%;
+}
+
+.OfflineBookingFormCalendarNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.OfflineBookingFormCalendarNavBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--heading-color);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.OfflineBookingFormCalendarNavBtn:hover {
+  background: #f5f5f5;
+  border-color: #ddd;
+}
+
+.OfflineBookingFormCalendarNavBtn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.OfflineBookingFormCalendarNavTitles {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex: 1;
+}
+
+.OfflineBookingFormCalendarNavTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.OfflineBookingFormCalendarMonths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+@media (max-width: 640px) {
+  .OfflineBookingFormCalendarMonths {
+    grid-template-columns: 1fr;
+  }
+}
+
+.OfflineBookingFormCalendarMonth {
+  min-width: 0;
+}
+
+.OfflineBookingFormCalendarWeekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.OfflineBookingFormCalendarWeekday {
+  font-size: 11px;
+  font-weight: 600;
+  color: #888;
+  text-align: center;
+}
+
+.OfflineBookingFormCalendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.OfflineBookingFormCalendarCell {
+  aspect-ratio: 1;
+  max-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--heading-color);
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  font-family: inherit;
+}
+
+.OfflineBookingFormCalendarCell:hover:not(.OfflineBookingFormCalendarCellEmpty):not(.OfflineBookingFormCalendarCellPast):not(.OfflineBookingFormCalendarCellSelected) {
+  background: rgba(235, 73, 58, 0.08);
+  border-color: var(--brand-color, #eb493a);
+}
+
+.OfflineBookingFormCalendarCellSelected {
+  background: var(--brand-color, #eb493a);
+  border-color: var(--brand-color, #eb493a);
+  color: #fff;
+}
+
+.OfflineBookingFormCalendarCellPast {
+  color: #bbb;
+  cursor: not-allowed;
+  background: #f9f9f9;
+  border-color: #eee;
+}
+
+.OfflineBookingFormCalendarCellEmpty {
+  background: transparent;
+  border-color: transparent;
+  cursor: default;
+}
+
+.OfflineBookingFormLabel {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Label with icon – icon and text aligned in one line */
+.OfflineBookingFormLabelWithIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.OfflineBookingFormLabelWithIcon svg {
+  flex-shrink: 0;
+  color: var(--text-color);
+}
+.OfflineBookingFormLabelRupee {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.OfflineBookingFormLabelIconWithSvg {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.OfflineBookingFormLabelIconWithSvg svg {
+  flex-shrink: 0;
+  color: var(--brand-color, #eb493a);
+}
+
+.OfflineBookingFormInput,
+.OfflineBookingFormSelect,
+.OfflineBookingFormTextarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 13px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--heading-color);
+}
+
+.OfflineBookingFormInput:focus,
+.OfflineBookingFormSelect:focus,
+.OfflineBookingFormTextarea:focus {
+  outline: none;
+  border-color: var(--brand-color, #eb493a);
+  box-shadow: 0 0 0 2px rgba(235, 73, 58, 0.15);
+}
+
+.OfflineBookingFormInput:disabled {
+  background: #f5f5f5;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.OfflineBookingFormInputError {
+  border-color: var(--brand-color, #eb493a);
+  box-shadow: 0 0 0 1px rgba(235, 73, 58, 0.2);
+}
+
+.OfflineBookingFormFieldError {
+  margin: 2px 0 0;
+  font-size: 0.72rem;
+  color: var(--brand-color, #eb493a);
+  line-height: 1.3;
+}
+
+.OfflineBookingFormTextarea {
+  resize: vertical;
+  min-height: 64px;
+}
+
+.OfflineBookingFormSlotHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.OfflineBookingFormSlotDate {
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
+.OfflineBookingFormSlots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.OfflineBookingFormSlotBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--heading-color);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.OfflineBookingFormSlotBtn:hover:not(:disabled) {
+  border-color: var(--brand-color, #eb493a);
+  color: var(--brand-color, #eb493a);
+  background: rgba(235, 73, 58, 0.04);
+}
+
+.OfflineBookingFormSlotBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.OfflineBookingFormSlotBtnActive {
+  background: rgba(235, 73, 58, 0.1);
+  border-color: var(--brand-color, #eb493a);
+  color: var(--brand-color, #eb493a);
+}
+
+.OfflineBookingFormSlotBtn svg {
+  flex-shrink: 0;
+}
+
+.OfflineBookingFormParticipantWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.OfflineBookingFormParticipantBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--heading-color);
+  background: #f3f4f6;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.OfflineBookingFormParticipantBtn:hover {
+  background: #e5e7eb;
+  border-color: var(--brand-color, #eb493a);
+  color: var(--brand-color, #eb493a);
+}
+
+.OfflineBookingFormParticipantCount {
+  min-width: 28px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.OfflineBookingFormActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  padding-top: 6px;
+}
+
+.OfflineBookingFormCancelBtn {
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--brand-color, #eb493a);
+  background: #fff;
+  border: 1px solid var(--brand-color, #eb493a);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.OfflineBookingFormCancelBtn:hover {
+  background: rgba(235, 73, 58, 0.08);
+}
+
+.OfflineBookingFormSubmitBtn {
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--brand-color, #eb493a);
+  border: 1px solid var(--brand-color, #eb493a);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.OfflineBookingFormSubmitBtn:hover {
+  opacity: 0.92;
+}
+
+/* Summary panel – readable font size, clear separation */
+.OfflineBookingFormSummary {
+  padding: 12px 14px;
+  background: #f8f9fa;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  position: sticky;
+  top: 140px;
+}
+
+.OfflineBookingFormSummaryTitle {
+  margin: 0 0 6px;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background: var(--brand-color, #eb493a);
+  border-radius: 6px;
+}
+
+.OfflineBookingFormSummaryCount {
+  margin: 0 0 12px;
+  font-size: 0.8rem;
+  color: var(--text-color);
+}
+
+.OfflineBookingFormSummaryBlock {
+  margin-bottom: 10px;
+}
+
+.OfflineBookingFormSummaryBlock:last-child {
+  margin-bottom: 0;
+}
+
+.OfflineBookingFormSummaryTotals {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.OfflineBookingFormSummaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding: 5px 0;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.06); */
+  font-size: 0.8125rem;
+}
+
+.OfflineBookingFormSummaryRow:last-child {
+  border-bottom: none;
+}
+
+.OfflineBookingFormSummaryLabel {
+  flex-shrink: 0;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.8125rem;
+}
+
+.OfflineBookingFormSummaryValue {
+  color: var(--heading-color);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  text-align: right;
+  word-break: break-word;
+  max-width: 60%;
+}
+
+.OfflineBookingFormSummaryDue {
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.OfflineBookingFormSummaryDueValue {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--brand-color, #eb493a);
+}
+
+.OfflineBookingFormSummarySubmit {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--brand-color, #eb493a);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.OfflineBookingFormSummarySubmit:hover {
+  opacity: 0.92;
+}

@@ -1,7 +1,7 @@
 "use client";
 
-import type { BookingActivityItem, PerActivityBooking, ParticipantDetails } from "@/app/booking-activity/CommonValues";
-import { formatPriceShort, getDiscountPercent, TIME_SLOTS } from "@/app/booking-activity/CommonValues";
+import type { BookingActivityItem, PerActivityBooking, ParticipantDetails } from "@/app/experiences/cart/CommonValues";
+import { formatPriceShort, getDiscountPercent, TIME_SLOTS } from "@/app/experiences/cart/CommonValues";
 import "./BookingCards.css";
 
 export interface BookingCardProps {
@@ -67,7 +67,7 @@ export default function BookingCard({
         </div>
         <div className="BookingActivityCardSummary">
           <div className="BookingActivityCardThumb">
-            <img src={activity.image} alt="" />
+            <img src={activity.image} alt={`Booking - ${activity.title}${activity.location ? ` in ${activity.location}` : ""}`} />
           </div>
           <div className="BookingActivityCardInfo">
             <span className="BookingActivityCardCategory">{activity.category}</span>

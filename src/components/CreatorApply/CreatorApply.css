@@ -1,0 +1,302 @@
+/* CreatorApply – minimal, professional form + faded adventure background */
+
+.CreatorApply {
+    position: relative;
+    width: 100%;
+    padding: 32px 0 48px;
+    min-height: 60vh;
+}
+
+/* Faded adventure activities background */
+.CreatorApplyBg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+        url("https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=60&w=1200&auto=format&fit=crop"),
+        url("https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=60&w=1200&auto=format&fit=crop"),
+        url("https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?q=60&w=1200&auto=format&fit=crop");
+    background-size: cover;
+    background-position: left top, center center, right bottom;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.CreatorApplyOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.92) 0%,
+        rgba(255, 255, 255, 0.88) 50%,
+        rgba(248, 250, 252, 0.9) 100%
+    );
+    pointer-events: none;
+}
+
+.CreatorApplyContainer {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+}
+
+.CreatorApplyLoading {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--text-color, #666);
+    font-size: 14px;
+}
+
+/* Login gate */
+.CreatorApplyGate {
+    text-align: center;
+    padding: 48px 24px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.CreatorApplyGateTitle {
+    margin: 0 0 12px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--heading-color, #222);
+}
+
+.CreatorApplyGateText {
+    margin: 0 0 24px 0;
+    font-size: 15px;
+    color: var(--text-color, #555);
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.CreatorApplyGateBtn {
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: var(--brand-color, #eb493a);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s;
+}
+
+.CreatorApplyGateBtn:hover {
+    background: #d63d2e;
+}
+
+/* Form */
+.CreatorApplyHeader {
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.CreatorApplyTitle {
+    margin: 0 0 6px 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--heading-color, #222);
+}
+
+.CreatorApplySubtitle {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-color, #555);
+}
+
+.CreatorApplyForm {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.CreatorApplyRow {
+    margin-bottom: 0;
+}
+
+.CreatorApplyRowHalf {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.CreatorApplyField {
+    margin-bottom: 18px;
+}
+
+.CreatorApplyRowHalf .CreatorApplyField {
+    margin-bottom: 18px;
+}
+
+.CreatorApplyRowHalf .CreatorApplyField:last-child,
+.CreatorApplyField:last-of-type {
+    margin-bottom: 0;
+}
+
+.CreatorApplyLabel {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--heading-color, #222);
+    margin-bottom: 6px;
+}
+
+.CreatorApplyLabelRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.CreatorApplyLabelRow .CreatorApplyLabel {
+    margin-bottom: 0;
+}
+
+.CreatorApplyAddBtn {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--brand-color, #eb493a);
+    background: rgba(235, 73, 58, 0.08);
+    border: 1px solid rgba(235, 73, 58, 0.25);
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.CreatorApplyAddBtn:hover {
+    background: rgba(235, 73, 58, 0.12);
+    border-color: var(--brand-color, #eb493a);
+}
+
+.CreatorApplyInput {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: var(--heading-color, #222);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.CreatorApplyInput:focus {
+    outline: none;
+    border-color: var(--brand-color, #eb493a);
+}
+
+.CreatorApplyTextarea {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: var(--heading-color, #222);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    resize: vertical;
+    min-height: 100px;
+    transition: border-color 0.2s;
+}
+
+.CreatorApplyTextarea:focus {
+    outline: none;
+    border-color: var(--brand-color, #eb493a);
+}
+
+.CreatorApplyDeliverableList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.CreatorApplyDeliverableItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.CreatorApplyDeliverableItem .CreatorApplyInput {
+    flex: 1;
+}
+
+.CreatorApplyRemoveBtn {
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    flex-shrink: 0;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.CreatorApplyRemoveBtn:hover {
+    border-color: #c53030;
+    color: #c53030;
+}
+
+.CreatorApplyFile {
+    width: 100%;
+    padding: 8px 0;
+    font-size: 13px;
+    color: var(--text-color, #555);
+    font-family: inherit;
+}
+
+.CreatorApplyFile:focus {
+    outline: none;
+}
+
+.CreatorApplyFileLabel {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.CreatorApplyActions {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.CreatorApplySubmitBtn {
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: #1a202c;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s;
+}
+
+.CreatorApplySubmitBtn:hover {
+    background: #2d3748;
+}
+
+@media (max-width: 600px) {
+    .CreatorApplyRowHalf {
+        grid-template-columns: 1fr;
+    }
+}

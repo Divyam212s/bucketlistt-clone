@@ -17,6 +17,7 @@ export interface Activity {
     discount?: string;
     images: string[];
     location?: string;
+    vendor?: string;
 }
 
 const ActivityCard = ({ activity }: { activity: Activity }) => {
@@ -36,7 +37,7 @@ const ActivityCard = ({ activity }: { activity: Activity }) => {
                 >
                     {activity.images.map((img, idx) => (
                         <SwiperSlide key={idx}>
-                            <img src={img} alt={`${activity.title} - ${idx + 1}`} />
+                            <img src={img} alt={`Activity card - ${activity.title} image ${idx + 1}`} />
                         </SwiperSlide>
                     ))}
                     <div className={`InnerPrev InnerPrev-${activity.id}`}>
@@ -54,7 +55,9 @@ const ActivityCard = ({ activity }: { activity: Activity }) => {
             </div>
             <div className="ActivityDetails">
                 <div className="ActivityMeta">
-                    <span className="ActivityCategory">{activity.category}</span>
+                    <div className="ActivityMetaLeft">
+                        <span className="ActivityCategory">{activity.category}</span>
+                    </div>
                     <div className="ActivityRating">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -64,15 +67,20 @@ const ActivityCard = ({ activity }: { activity: Activity }) => {
                     </div>
                 </div>
                 <h3 className="ActivityTitle">{activity.title}</h3>
-                {activity.location && (
-                    <div className="ActivityLocation">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        {activity.location}
-                    </div>
-                )}
+                <div className="ActivityLocationVendorRow">
+                    {activity.location && (
+                        <div className="ActivityLocation">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            {activity.location}
+                        </div>
+                    )}
+                    {activity.vendor && (
+                        <span className="ActivityVendor">{activity.vendor}</span>
+                    )}
+                </div>
                 <div className="ActivityPrice">
                     <div className="PriceLeft">
                         <span className="FromTag">from</span>

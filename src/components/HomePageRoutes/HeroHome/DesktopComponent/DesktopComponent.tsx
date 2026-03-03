@@ -33,7 +33,7 @@ const HeroHomeDesktopComponent = () => {
             <div className="cinematic-overlay" />
             <div className="DesktopMainContainer">
                 <div className="DesktopImageContainer">
-                    <img src={HeroHomeDeskTopImage} alt="Hero Home Desktop" />
+                    <img src={HeroHomeDeskTopImage} alt="Bucketlistt - Hand-picked adventure experiences for travellers" />
                 </div>
                 <div className="DesktopContent">
                     <div className="DesktopContentContainer PaddingBottomDesktopOnly  MaxWidthComponent MarginAuto">

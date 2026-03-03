@@ -21,7 +21,7 @@ export interface ActivityGalleryProps {
 const ActivityGallery = ({
     title,
     destinationName,
-    destinationHref = "/destination",
+    destinationHref = "/all-destination",
     rating,
     reviewCount,
     location,
@@ -97,7 +97,7 @@ const ActivityGallery = ({
 
             <div className="ActivityGalleryGrid">
                 <div className="ActivityGalleryGridMain">
-                    <img src={mainImageUrl} alt={title} />
+                    <img src={mainImageUrl} alt={`Activity gallery - ${title} main image`} />
                 </div>
                 <div className="ActivityGalleryGridSecondary">
                     {secondaryImageUrls.map((url, idx) => (
@@ -105,7 +105,7 @@ const ActivityGallery = ({
                             key={idx}
                             className="ActivityGalleryGridItem"
                         >
-                            <img src={url} alt={`${title} - ${idx + 2}`} />
+                            <img src={url} alt={`Activity gallery - ${title} image ${idx + 2}`} />
                             {idx === 3 && (
                                 <button
                                     type="button"
